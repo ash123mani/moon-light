@@ -1,6 +1,8 @@
 import React from 'react'
-import { node } from 'styled-components'
+import { node } from 'prop-types'
 import { ThemeProvider } from 'styled-components'
+
+import Header from '../header'
 
 import { ResetStyles, Colors, theme } from '../../styles/global'
 
@@ -11,7 +13,10 @@ function Layout(props) {
     <React.Fragment>
       <ResetStyles />
       <Colors />
-      <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      <ThemeProvider theme={theme}>
+        <Header />
+        <main>{children}</main>
+      </ThemeProvider>
     </React.Fragment>
   )
 }

@@ -1,10 +1,16 @@
-import * as React from 'react'
+import React from 'react'
 
-import navLinks from '../../mocks/links'
-import { NavContainer } from '../shared/nav'
+import { Container } from '../styles/pages/home'
+import ImageCarousel from '../components/home-page/carousel'
 
-const IndexPage = () => {
-  return <NavContainer navs={navLinks} />
+function IndexPage() {
+  return (
+    <React.Fragment>
+      <Container>
+        <ImageCarousel />
+      </Container>
+    </React.Fragment>
+  )
 }
 
 export default IndexPage

@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
-import { object } from 'prop-types'
+import { array, bool } from 'prop-types'
 
 import NavTab from '../nav-tab'
 
 import { Container, NavContent } from './styles'
 
 function NavContainer(props) {
-  const { navs } = props
+  const { navs, isTop = true } = props
 
   const [selected, setSelected] = useState([])
+  // const isSelected =
 
   const handleNavTabClick = (nav) => {
     let newLinks = []
@@ -23,12 +24,21 @@ function NavContainer(props) {
   return (
     <Container>
       {navs.map((nav, index) => {
+        const hasSubLinks = nav.subLinks && !!nav.subLinks.length
+        const isSelected = selected.includes(nav.link)
+
         return (
-          <NavContent key={index}>
-            <NavTab link={nav.link} title={nav.title} onClick={(e) => handleNavTabClick(nav, e)} />
-            {selected.includes(nav.link) && nav.subLinks && !!nav.subLinks.length && (
-              <NavContainer navs={nav.subLinks} key={index} />
-            )}
+          <NavContent key={index} isTop={isTop}>
+            <NavTab
+              showArrow={isTop}
+              link={nav.link}
+              title={nav.title}
+              onClick={(e) => handleNavTabClick(nav, e)}
+              isSelected={isSelected}
+              hasSubLinks={hasSubLinks}
+            />
+
+            {isSelected && hasSubLinks && <NavContainer navs={nav.subLinks} key={index} isTop={false} />}
           </NavContent>
         )
       })}
@@ -37,7 +47,12 @@ function NavContainer(props) {
 }
 
 NavContainer.propTypes = {
-  navs: object.isRequired,
+  navs: array.isRequired,
+  isTop: bool,
+}
+
+NavContainer.defaultProps = {
+  isTop: true,
 }
 
 export default NavContainer

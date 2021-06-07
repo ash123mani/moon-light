@@ -21,6 +21,10 @@ const GlobalStyles = createGlobalStyle`
     font-size: 62.5%;
   }
 
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+
   a {
     text-decoration: none;
   }

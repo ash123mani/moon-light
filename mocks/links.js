@@ -1,6 +1,6 @@
 const menuLinksMock = [
   {
-    title: '_Home',
+    title: 'Routing',
     link: 'a',
     subLinks: [
       {
@@ -12,37 +12,14 @@ const menuLinksMock = [
             link: 'c',
             subLinks: [
               {
-                title: 'home-1-2',
-                link: 'd',
-                subLinks: [
-                  {
-                    title: 'home-1-2-2-2',
-                    link: 'e',
-                    subLinks: [
-                      {
-                        title: 'home-1-2-n',
-                        link: 'f',
-                      },
-                    ],
-                  },
-                ],
-              },
-              {
-                title: 'home-1-3',
-                link: 'g',
-                subLinks: [
-                  {
-                    title: 'fake',
-                    link: 'h',
-                    subLinks: [
-                      {
-                        title: 'fake-1',
-                      },
-                    ],
-                  },
-                ],
+                title: 'test-home',
+                link: 'd7',
               },
             ],
+          },
+          {
+            title: 'hme-21',
+            link: '89',
           },
         ],
       },
@@ -53,7 +30,7 @@ const menuLinksMock = [
     ],
   },
   {
-    title: '_Home3',
+    title: 'Switching',
     link: '/m',
     subLinks: [
       {
@@ -62,24 +39,12 @@ const menuLinksMock = [
     ],
   },
   {
-    title: '_Home4',
+    title: 'Platform',
     link: 'n',
     subLinks: [
       {
         title: 'Home4-1',
         link: 't',
-        subLinks: [
-          {
-            title: 'Home4-a',
-            link: 'ta',
-            subLinks: [
-              {
-                title: 'newTension',
-                link: 'asda',
-              },
-            ],
-          },
-        ],
       },
       {
         title: 'Home4-122',
@@ -88,11 +53,11 @@ const menuLinksMock = [
     ],
   },
   {
-    title: '_Home5',
+    title: 'VMware',
     link: 'z',
   },
   {
-    title: '_Home6',
+    title: 'Misclenious',
     link: 'r',
     subLinks: [
       {

@@ -30,5 +30,13 @@ module.exports = {
       },
       __key: 'images',
     },
+    // This will make us see component name in chrome inspect
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        displayName: true,
+        ssr: true,
+      },
+    },
   ],
 }
