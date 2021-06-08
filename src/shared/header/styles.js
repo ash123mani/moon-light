@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 const Wrapper = styled.header`
-  /* background-color: var(--dark-black); */
   position: sticky;
   top: 0;
   padding: 3rem 10%;

@@ -22,7 +22,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
   }
 
   a {

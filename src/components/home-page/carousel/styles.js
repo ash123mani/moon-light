@@ -1,20 +1,19 @@
 import styled from 'styled-components'
+import Carousel from 'react-multi-carousel'
 
-const ContentWrapper = styled.div``
+import { fadeInUp } from '../../../styles/utils'
 
-const Img = styled.img`
-  width: 100vw;
-  height: calc(100vh - 109px);
-  filter: grayscale(100%);
+const ContentWrapper = styled.div`
+  height: 100%;
+  width: 100%;
 `
-
 const Title = styled.h1`
   position: absolute;
   top: 40%;
   padding-left: 10%;
   color: var(--dark-white);
   font-size: 4.2rem;
-  /* color: var(--dark-black); */
+  /* animation: ${fadeInUp} 1s linear; */
 `
 
 const Description = styled.h2`
@@ -22,8 +21,18 @@ const Description = styled.h2`
   top: 50%;
   padding-left: 10%;
   font-weight: 400;
-  /* color: var(--dark-black); */
   color: var(--dark-white);
 `
 
-export { ContentWrapper, Img, Title, Description }
+const StyledCarousel = styled(Carousel)`
+  & .react-multi-carousel-track {
+    height: 100%;
+  }
+
+  & .react-multi-carousel-track .react-multi-carousel-item--active h1,
+  & .react-multi-carousel-track .react-multi-carousel-item--active h2 {
+    animation: ${fadeInUp} 1s ease-in-out;
+  }
+`
+
+export { ContentWrapper, Title, Description, StyledCarousel }

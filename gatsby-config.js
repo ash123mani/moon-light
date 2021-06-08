@@ -1,7 +1,14 @@
+/* eslint-disable no-undef */
 // eslint-disable-next-line no-undef
+
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: 'vnet-macina',
+    url: process.env.URL,
   },
   plugins: [
     'gatsby-plugin-gatsby-cloud',
@@ -9,7 +16,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: 'aa',
+        trackingId: process.env.GA_TRACKING_ID,
       },
     },
     'gatsby-plugin-react-helmet',
@@ -17,7 +24,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/images/icon.png',
+        icon: 'src/images/logo.png',
       },
     },
     'gatsby-plugin-sharp',
@@ -36,6 +43,14 @@ module.exports = {
       options: {
         displayName: true,
         ssr: true,
+      },
+    },
+    // for pulling content types, entries, and assets into Gatsby from Contentful spaces
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
   ],

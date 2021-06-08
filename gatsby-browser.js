@@ -6,7 +6,7 @@ import Layout from './src/shared/layout'
 const wrapPageElement = ({ element, props }) => {
   WebFont.load({
     google: {
-      families: ['Poppins:300,400,500,700', 'sans-serif'],
+      families: ['Roboto:300,400,500,700', 'sans-serif'],
     },
   })
 
