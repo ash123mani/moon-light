@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 
 import { Container } from '../styles/pages/home'
 import ImageCarousel from '../components/home-page/carousel'
+import MiscBlogs from '../components/home-page/misc-blogs'
 
 function IndexPage({ data }) {
   const {
@@ -16,6 +17,7 @@ function IndexPage({ data }) {
       <Container>
         <ImageCarousel blogs={homePageBlogs} />
       </Container>
+      <MiscBlogs miscBlogs={homePageBlogs} />
     </React.Fragment>
   )
 }
@@ -26,7 +28,7 @@ export const query = graphql`
       homePageBlogs {
         title
         description
-        gatsbyImageData(placeholder: DOMINANT_COLOR, formats: [WEBP], layout: FULL_WIDTH)
+        gatsbyImageData(placeholder: DOMINANT_COLOR, formats: [WEBP], layout: FULL_WIDTH, quality: 65)
       }
     }
   }

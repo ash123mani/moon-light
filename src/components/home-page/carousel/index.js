@@ -1,5 +1,5 @@
 import React from 'react'
-import { object } from 'prop-types'
+import { array } from 'prop-types'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import 'react-multi-carousel/lib/styles.css'
 
@@ -49,7 +49,7 @@ function ImageCarousel({ blogs }) {
 }
 
 ImageCarousel.propTypes = {
-  blogs: object.isRequired,
+  blogs: array.isRequired,
 }
 
 export default ImageCarousel
