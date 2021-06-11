@@ -5,30 +5,37 @@ import { graphql } from 'gatsby'
 import { Container } from '../styles/pages/home'
 import ImageCarousel from '../components/home-page/carousel'
 import MiscBlogs from '../components/home-page/misc-blogs'
+import SEO from '../common/seo'
 
 function IndexPage({ data }) {
   const {
-    contentfulHomePage: { homePageBlogs },
+    allContentfulHomePageBanners: { nodes: banners },
   } = data
   console.log('Index', data)
 
   return (
     <React.Fragment>
+      <SEO title="Vnet Machina" />
       <Container>
-        <ImageCarousel blogs={homePageBlogs} />
+        <ImageCarousel blogs={banners} />
       </Container>
-      <MiscBlogs miscBlogs={homePageBlogs} />
+      <MiscBlogs miscBlogs={banners} />
     </React.Fragment>
   )
 }
 
 export const query = graphql`
   query Index {
-    contentfulHomePage {
-      homePageBlogs {
+    allContentfulHomePageBanners {
+      nodes {
         title
         description
-        gatsbyImageData(placeholder: DOMINANT_COLOR, formats: [WEBP], layout: FULL_WIDTH, quality: 65)
+        banneLink
+        category
+        altText
+        image {
+          gatsbyImageData(placeholder: DOMINANT_COLOR, formats: [WEBP], layout: FULL_WIDTH, quality: 65)
+        }
       }
     }
   }

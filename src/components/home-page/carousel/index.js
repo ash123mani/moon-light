@@ -1,11 +1,11 @@
 import React from 'react'
 import { array } from 'prop-types'
-import { GatsbyImage } from 'gatsby-plugin-image'
 import 'react-multi-carousel/lib/styles.css'
 
 import Link from '../../../common/link'
+import Image from '../../../common/image'
 
-import { ContentWrapper, Title, Description, StyledCarousel } from './styles'
+import { ContentWrapper, Title, Description, StyledCarousel, TextWrapper } from './styles'
 
 const responsive = {
   desktop: {
@@ -26,20 +26,16 @@ function ImageCarousel({ blogs }) {
   return (
     <StyledCarousel ssr partialVisbile itemClass="image-item" responsive={responsive} deviceType="desktop" infinite>
       {blogs.map((blog, index) => {
-        const { title, description, gatsbyImageData } = blog
+        const { title, description, image, banneLink, altText } = blog
 
         return (
-          <Link key={index} to="/blog">
+          <Link key={index} to={banneLink}>
             <ContentWrapper>
-              <GatsbyImage
-                key={index}
-                alt={title}
-                image={gatsbyImageData}
-                as="div"
-                style={{ width: '100vw', height: '100%' }}
-              />
-              <Title>{title}</Title>
-              <Description>{description}</Description>
+              <Image altText={altText} image={image.gatsbyImageData} imgStyle={{ width: '100vw', height: '100%' }} />
+              <TextWrapper>
+                <Title>{title}</Title>
+                <Description>{description}</Description>
+              </TextWrapper>
             </ContentWrapper>
           </Link>
         )

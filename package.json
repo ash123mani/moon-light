@@ -1,18 +1,19 @@
 {
-  "name": "vnet-macina",
+  "name": "vnet-machina",
   "version": "1.0.0",
   "private": true,
-  "description": "vnet-macina",
-  "author": "onlinejudge95",
+  "description": "vnet-machina",
+  "author": "vnet-machina",
   "keywords": [
     "gatsby"
   ],
   "scripts": {
-    "develop": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
+    "develop": "ENABLE_GATSBY_REFRESH_ENDPOINT=true GATSBY_GRAPHQL_IDE=playground gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "refresh": "curl -X POST http://localhost:8000/__refresh"
   },
   "dependencies": {
     "gatsby": "^3.4.1",
@@ -30,6 +31,7 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-headroom": "^3.1.1",
     "react-helmet": "^6.1.0",
     "react-multi-carousel": "^2.6.3",
     "styled-components": "^5.3.0",

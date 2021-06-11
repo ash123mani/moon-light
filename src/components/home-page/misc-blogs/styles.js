@@ -9,7 +9,7 @@ const Title = styled.h3`
 `
 
 const Wrapper = styled.div`
-  margin-top: 4rem;
+  margin-top: 6rem;
 `
 
 export { Container, Title, Wrapper }

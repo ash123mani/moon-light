@@ -1,22 +1,19 @@
 import React from 'react'
-import { oneOf, object } from 'prop-types'
-import { GatsbyImage } from 'gatsby-plugin-image'
+import { oneOf, string } from 'prop-types'
 
 import Link from '../../common/link'
+import Image from '../../common/image'
 
 import { BlogCard as Card, Content, BlogTitle, BlogDescription } from './styles'
 
-function BlogCard({ orientation, blog }) {
-  const { title, description, gatsbyImageData } = blog
-
+function BlogCard({ title, description, image, banneLink, altText, orientation }) {
   return (
-    <Link to="/blog">
+    <Link to={banneLink}>
       <Card orientation={orientation}>
-        <GatsbyImage
-          alt={title}
-          image={gatsbyImageData}
-          as="div"
-          style={{
+        <Image
+          alt={altText}
+          image={image.gatsbyImageData}
+          imgStyle={{
             width: '350px',
             height: '100%',
           }}
@@ -31,8 +28,12 @@ function BlogCard({ orientation, blog }) {
 }
 
 BlogCard.propTypes = {
-  orientation: oneOf(['reverse']),
-  blog: object.isRequired,
+  orientation: oneOf(['reverse', 'default']),
+  title: string.isRequired,
+  description: string.isRequired,
+  image: string.isRequired,
+  banneLink: string.isRequired,
+  altText: string.isRequired,
 }
 
 BlogCard.defaultProps = {

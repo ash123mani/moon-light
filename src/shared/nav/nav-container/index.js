@@ -13,10 +13,10 @@ function NavContainer(props) {
 
   const handleNavTabClick = (nav) => {
     let newLinks = []
-    if (selected.includes(nav.link)) {
-      newLinks = selected.filter((item) => item !== nav.link)
+    if (selected.includes(nav.url)) {
+      newLinks = selected.filter((item) => item !== nav.url)
     } else {
-      newLinks = selected.concat(nav.link)
+      newLinks = selected.concat(nav.url)
     }
     setSelected(newLinks)
   }
@@ -24,21 +24,23 @@ function NavContainer(props) {
   return (
     <Container>
       {navs.map((nav, index) => {
-        const hasSubLinks = nav.subLinks && !!nav.subLinks.length
-        const isSelected = selected.includes(nav.link)
+        const hasSubLinks = nav.pages && !!nav.pages.length
+        const isSelected = selected.includes(nav.url)
+
+        console.log('nav is', nav)
 
         return (
           <NavContent key={index} isTop={isTop}>
             <NavTab
               showArrow={isTop}
-              link={nav.link}
+              url={nav.url}
               title={nav.title}
               onClick={(e) => handleNavTabClick(nav, e)}
               isSelected={isSelected}
               hasSubLinks={hasSubLinks}
             />
 
-            {isSelected && hasSubLinks && <NavContainer navs={nav.subLinks} key={index} isTop={false} />}
+            {isSelected && hasSubLinks && <NavContainer navs={nav.pages} key={index} isTop={false} />}
           </NavContent>
         )
       })}

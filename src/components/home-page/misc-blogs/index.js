@@ -11,13 +11,23 @@ function MiscBlogs({ miscBlogs }) {
       <Title>MiscBlogs</Title>
       <Wrapper>
         {miscBlogs.map((blog, index) => {
+          const { title, description, image, banneLink, altText } = blog
+
           let orientation = 'default'
           if (index % 2 == 0) {
             orientation = 'reverse'
           }
+
           return (
-            <div style={{ marginBottom: '3rem' }} key={index}>
-              <BlogCard blog={blog} orientation={orientation} />
+            <div style={{ marginBottom: '8rem' }} key={index}>
+              <BlogCard
+                title={title}
+                description={description}
+                image={image}
+                banneLink={banneLink}
+                altText={altText}
+                orientation={orientation}
+              />
             </div>
           )
         })}

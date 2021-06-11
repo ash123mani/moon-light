@@ -26,11 +26,9 @@ const BlogCard = styled.div`
 `
 
 const Content = styled.div`
-  padding-left: 4rem;
   border: 1px solid var(--border);
   border-left: none;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding: 2rem 4rem;
   flex: 1;
 `
 

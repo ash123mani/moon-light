@@ -7,7 +7,7 @@ const parentNavBorder = ({ isTop }) =>
   `
 
 const NavContent = styled.div`
-  /* margin-left: 24px; */
+  padding-left: 8px;
   ${parentNavBorder}
 `
 

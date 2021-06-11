@@ -1,10 +1,22 @@
 import React from 'react'
-import { StaticImage } from 'gatsby-plugin-image'
+import { string, object, oneOf } from 'prop-types'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
-import vnetLogo from '../../images/icon.png'
-
-function Image() {
-  return <StaticImage src={vnetLogo} alt="A dinosaur" width={200} height={200} />
+function DynamicImage({ image, altText, imgStyle, as, loading }) {
+  return <GatsbyImage as={as} image={image} alt={altText} loading={loading} style={imgStyle} />
 }
 
-export default Image
+DynamicImage.propTypes = {
+  image: object.isRequired,
+  altText: string.isRequired,
+  imgStyle: object.isRequired,
+  as: string,
+  loading: oneOf(['eager', 'lazy']),
+}
+
+DynamicImage.defaultProps = {
+  loading: 'eager',
+  as: 'div',
+}
+
+export default DynamicImage

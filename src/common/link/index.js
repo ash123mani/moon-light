@@ -25,7 +25,7 @@ function Link({ children, to, activeStyle, activeClassName, partiallyActive, ...
   }
 
   return (
-    <a href={to} {...restProps}>
+    <a href={to} rel="noreferrer" target="_blank" {...restProps}>
       {children}
     </a>
   )

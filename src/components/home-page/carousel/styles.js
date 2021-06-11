@@ -7,21 +7,23 @@ const ContentWrapper = styled.div`
   height: 100%;
   width: 100%;
 `
-const Title = styled.h1`
+const TextWrapper = styled.div`
   position: absolute;
-  top: 40%;
+  top: 44%;
   padding-left: 10%;
+  max-width: 80%;
+`
+const Title = styled.h1`
   color: var(--dark-white);
   font-size: 4.2rem;
+  line-height: 1;
   /* animation: ${fadeInUp} 1s linear; */
 `
 
 const Description = styled.h2`
-  position: absolute;
-  top: 50%;
-  padding-left: 10%;
   font-weight: 400;
   color: var(--dark-white);
+  margin-top: 1rem;
 `
 
 const StyledCarousel = styled(Carousel)`
@@ -35,4 +37,4 @@ const StyledCarousel = styled(Carousel)`
   }
 `
 
-export { ContentWrapper, Title, Description, StyledCarousel }
+export { ContentWrapper, Title, Description, StyledCarousel, TextWrapper }

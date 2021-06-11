@@ -10,6 +10,8 @@ const Colors = createGlobalStyle`
 
 
     --border: rgba(0, 0, 0, 0.12);
+
+    --dunzo: rgb(23, 30, 48);
   }
 `
 

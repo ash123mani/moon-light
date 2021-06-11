@@ -23,6 +23,7 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: 'Roboto', sans-serif;
+    line-height: 1.4;
   }
 
   a {
