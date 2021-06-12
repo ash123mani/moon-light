@@ -42,7 +42,7 @@ module.exports = {
       resolve: `gatsby-plugin-styled-components`,
       options: {
         displayName: true,
-        ssr: true,
+        pure: true,
       },
     },
     // for pulling content types, entries, and assets into Gatsby from Contentful spaces

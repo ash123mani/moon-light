@@ -8,8 +8,6 @@ function Link({ children, to, activeStyle, activeClassName, partiallyActive, ...
   // will start with exactly one slash, and that anything else is external.
   const internal = /^\/(?!\/)/.test(to)
 
-  console.log('restProps', restProps)
-
   if (internal) {
     return (
       <GatsbyLink
