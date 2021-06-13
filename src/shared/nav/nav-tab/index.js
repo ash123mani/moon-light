@@ -1,18 +1,20 @@
 import React, { memo } from 'react'
 import { string, func, bool } from 'prop-types'
 
-import { NavBox, Title, StyledLink, StyledIcon } from './styles'
+import { NavBox, Title, StyledLink, StyledIcon, LensIcon } from './styles'
 
-function NavTab({ title, url, onClick, showArrow, isSelected, hasSubLinks, onLinkClick }) {
+function NavTab({ title, url, onClick, showArrow, isSelected, hasSubLinks }) {
+  const currentPath = typeof window !== 'undefined' ? window.location.pathname : ''
+
   return (
-    <NavBox showArrow={showArrow} hasSubLinks={hasSubLinks}>
+    <NavBox showArrow={showArrow} hasSubLinks={hasSubLinks} isSelected={url === currentPath} onClick={onClick}>
       {hasSubLinks ? (
-        <StyledIcon name="arrow-forward" isSelected={isSelected} onClick={onClick} />
+        <StyledIcon name="arrow-forward" isSelected={isSelected} height="12px" width="12px" />
       ) : (
-        <StyledIcon name="circle" />
+        <LensIcon name="lens" height="8px" width="8px" />
       )}
 
-      <StyledLink to={url} onClick={onLinkClick}>
+      <StyledLink to={url}>
         <Title>{title}</Title>
       </StyledLink>
     </NavBox>
@@ -26,7 +28,6 @@ NavTab.propTypes = {
   showArrow: bool.isRequired,
   isSelected: bool,
   hasSubLinks: bool,
-  onLinkClick: func.isRequired,
 }
 
 NavTab.defaultProps = {

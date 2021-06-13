@@ -2,10 +2,14 @@ import React, { memo } from 'react'
 import { oneOf, string } from 'prop-types'
 
 import svgList from './svg-list'
-import { Image } from './styles'
+import { Image, Container } from './styles'
 
 function Icon({ alt, rotate, height, width, name, ...restProps }) {
-  return <Image src={svgList[name]} alt={alt} rotate={rotate} height={height} width={width} {...restProps} />
+  return (
+    <Container height={height} width={width} {...restProps}>
+      <Image src={svgList[name]} alt={alt} rotate={rotate} height={height} width={width} />
+    </Container>
+  )
 }
 
 Icon.propTypes = {

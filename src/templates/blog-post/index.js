@@ -1,28 +1,46 @@
 import React from 'react'
-import { string } from 'prop-types'
+import { shape, array } from 'prop-types'
+import { graphql } from 'gatsby'
 
 import NavMenu from '../../components/blog-page/nav-menu'
 
 import { Container } from './styles'
 
-function BlogPost(props) {
-  const currentPath = props.path
+function BlogPost({ data }) {
+  const {
+    contentfulBlogPages: { url, title },
+  } = data
 
   return (
     <React.Fragment>
       <title>Vnet Macina</title>
       <Container>
-        <NavMenu currentPath={currentPath} />
+        <NavMenu />
         <div>
-          <h1>BlogPost</h1>
+          <h1>
+            {title} {url}
+          </h1>
         </div>
       </Container>
     </React.Fragment>
   )
 }
 
+export const query = graphql`
+  query BlogPageQuery($url: String!) {
+    contentfulBlogPages(url: { eq: $url }) {
+      url
+      title
+    }
+  }
+`
+
 BlogPost.propTypes = {
-  path: string.isRequired,
+  data: shape({
+    allContentfulBlogPages: shape({
+      edges: array.isRequired,
+    }),
+  }),
 }
 
 export default BlogPost

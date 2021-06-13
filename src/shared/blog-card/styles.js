@@ -14,10 +14,15 @@ const BlogCard = styled.div`
   height: 300px;
   width: 100%;
   display: flex;
+  transition: transform 0.15s ease-out 0s, border-color 0.15s ease-out 0s, box-shadow 0.15s ease-out 0s;
   ${orientationStyles};
 
   & img {
     filter: grayscale(1);
+  }
+
+  &:hover {
+    box-shadow: var(--box-shadow-1);
   }
 
   &:hover img {

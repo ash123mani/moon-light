@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components'
 import Header from '../header'
 import Footer from '../footer'
 
-import { ResetStyles, Colors, theme } from '../../styles/global'
+import { ResetStyles, GlobalVariables, theme } from '../../styles/global'
 
 function Layout(props) {
   const { children } = props
@@ -13,7 +13,7 @@ function Layout(props) {
   return (
     <React.Fragment>
       <ResetStyles />
-      <Colors />
+      <GlobalVariables />
       <ThemeProvider theme={theme}>
         <Header />
         <main>{children}</main>

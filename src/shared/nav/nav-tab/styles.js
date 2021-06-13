@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components'
-// import { Link } from 'gatsby'
 
 import Icon from '../../../common/icon'
 import Link from '../../../common/link'
@@ -17,19 +16,24 @@ const subNavArrowStyles = ({ hasSubLinks }) =>
   `
 
 const NavBox = styled.div`
-  padding: 8px 12px;
-  border-radius: 2px;
+  background: ${({ isSelected }) => (isSelected ? 'var(--light-black)' : 'var(--transparent)')};
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 4px;
   max-width: 240px;
-  min-width: 200px;
+  min-width: 240px;
   width: auto;
   margin: 8px;
   cursor: pointer;
+
   /* ${subNavStyles}; */
   ${subNavArrowStyles}
 `
 
 const Title = styled.span`
   font-size: 1.6rem;
+  color: var(--medium-black);
 `
 const StyledLink = styled(Link)`
   font-size: 2rem;
@@ -37,9 +41,17 @@ const StyledLink = styled(Link)`
 
 const StyledIcon = styled(Icon)`
   transform: ${({ isSelected }) => (isSelected ? 'rotate(90deg)' : '')};
-  width: 12px;
-  height: 12px;
+  margin-right: 4px;
+  padding: 4px;
+
+  &:hover {
+    background-color: var(--light-black);
+    border-radius: 4px;
+  }
+`
+
+const LensIcon = styled(Icon)`
   margin-right: 8px;
 `
 
-export { NavBox, Title, StyledLink, StyledIcon }
+export { NavBox, Title, StyledLink, StyledIcon, LensIcon }

@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 const parentNavBorder = ({ isTop }) =>
   isTop &&
   css`
-    border-bottom: 1px solid var(--border);
+    /* border-bottom: 1px solid var(--border); */
   `
 
 const NavContent = styled.div`
