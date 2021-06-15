@@ -24,9 +24,10 @@ function MiscBlogs({ miscBlogs }) {
                 title={title}
                 description={description}
                 image={image}
-                banneLink={banneLink}
+                link={banneLink}
                 altText={altText}
                 orientation={orientation}
+                cardStyles={{ height: '300px' }}
               />
             </div>
           )

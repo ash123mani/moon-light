@@ -16,6 +16,7 @@
     "refresh": "curl -X POST http://localhost:8000/__refresh"
   },
   "dependencies": {
+    "@contentful/rich-text-types": "^14.1.2",
     "gatsby": "^3.4.1",
     "gatsby-plugin-gatsby-cloud": "^2.6.1",
     "gatsby-plugin-google-analytics": "^3.6.0",

@@ -1,12 +1,12 @@
 import React, { memo } from 'react'
-import { oneOf, string } from 'prop-types'
+import { oneOf, string, bool } from 'prop-types'
 
 import svgList from './svg-list'
 import { Image, Container } from './styles'
 
-function Icon({ alt, rotate, height, width, name, ...restProps }) {
+function Icon({ alt, rotate, height, width, name, hoverable, ...restProps }) {
   return (
-    <Container height={height} width={width} {...restProps}>
+    <Container height={height} width={width} hoverable={hoverable} {...restProps}>
       <Image src={svgList[name]} alt={alt} rotate={rotate} height={height} width={width} />
     </Container>
   )
@@ -18,6 +18,7 @@ Icon.propTypes = {
   alt: string,
   width: string,
   height: string,
+  hoverable: bool,
 }
 
 Icon.defaultProps = {
@@ -27,6 +28,7 @@ Icon.defaultProps = {
   alt: '',
   width: '40px',
   height: '40px',
+  hoverable: false,
 }
 
 export default memo(Icon)

@@ -5,6 +5,7 @@ const NavWrapper = styled.div`
   /* padding: 40px; */
   height: calc(100vh - 90px);
   overflow: auto;
+  padding: 1rem 0.6rem;
 `
 
 export { NavWrapper }

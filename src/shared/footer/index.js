@@ -30,7 +30,7 @@ const svgMapper = {
   mail,
 }
 
-function Footer() {
+function Footer(props) {
   const data = useStaticQuery(graphql`
     query Footer {
       contentfulHeaderAndFooter {
@@ -103,7 +103,7 @@ function Footer() {
   }
 
   return (
-    <Container>
+    <Container {...props}>
       <TopContent>
         <Title>{title}</Title>
         <About>{subtitle}</About>
