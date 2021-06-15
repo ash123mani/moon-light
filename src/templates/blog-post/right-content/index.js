@@ -4,7 +4,8 @@ import { shape, array } from 'prop-types'
 import RichTextToDOM from '../../../shared/rich-text-to-dom'
 import Footer from '../../../shared/footer'
 
-import { ContentContainer, Title, RightContentContainer, StyledBlogCard } from './styles'
+import SubBlogCard from './sub-blog-card'
+import { ContentContainer, Title, RightContentContainer } from './styles'
 
 function RightContent({ data }) {
   const {
@@ -21,16 +22,7 @@ function RightContent({ data }) {
           pages.map((page) => {
             const { title, subtitle: description, url } = page
 
-            return (
-              <StyledBlogCard
-                title={title}
-                description={description}
-                link={url}
-                key={url}
-                altText={title}
-                cardStyles={{ height: 'auto', marginBottom: '4rem' }}
-              />
-            )
+            return <SubBlogCard title={title} description={description} url={url} key={url} />
           })
         ) : (
           <RichTextToDOM richTextJson={content} />

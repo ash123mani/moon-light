@@ -8,7 +8,7 @@ import { Container, Title, Wrapper } from './styles'
 function MiscBlogs({ miscBlogs }) {
   return (
     <Container>
-      <Title>MiscBlogs</Title>
+      <Title>Hot Blogs</Title>
       <Wrapper>
         {miscBlogs.map((blog, index) => {
           const { title, description, image, banneLink, altText } = blog

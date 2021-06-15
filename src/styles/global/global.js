@@ -12,12 +12,15 @@ const Global = createGlobalStyle`
 
 
     --border: rgba(0, 0, 0, 0.12);
+    --border-radius-card: 4px;
 
     --dunzo: rgb(23, 30, 48);
 
     --transparent: transparent;
 
     --box-shadow-1: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+    --card-transition: transform 0.15s ease-out 0s, border-color 0.15s ease-out 0s, box-shadow 0.15s ease-out 0s;
   }
 `
 

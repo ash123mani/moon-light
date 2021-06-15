@@ -20,10 +20,12 @@ const orientationStyles = ({ orientation }) => {
 }
 
 const BlogCard = styled.div`
-  /* height: 300px; */
   width: 100%;
   display: flex;
-  transition: transform 0.15s ease-out 0s, border-color 0.15s ease-out 0s, box-shadow 0.15s ease-out 0s;
+  transition: var(--card-transition);
+  border-radius: var(--border-radius-card);
+  border: 1px solid var(--border);
+
   ${orientationStyles};
 
   & img {
@@ -40,7 +42,6 @@ const BlogCard = styled.div`
 `
 
 const Content = styled.div`
-  border: 1px solid var(--border);
   padding: 2rem 4rem;
   flex: 1;
 `
@@ -48,7 +49,7 @@ const Content = styled.div`
 const BlogTitle = styled.div`
   font-size: 3.2rem;
   font-weight: 400;
-  color: var(--medium-black);
+  color: var(--dark-black);
 `
 
 const BlogDescription = styled.div`
