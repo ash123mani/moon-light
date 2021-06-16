@@ -2,8 +2,9 @@ import { createGlobalStyle } from 'styled-components'
 
 const Global = createGlobalStyle`
   :root {
-    --dark-black: rgba(0, 0, 0, 1);
+    --dark-black: rgb(0 13 13);
     --medium-black: rgb(0 0 0 / 62%);
+    --medium1-black: #464e4e;
     --light-black: rgba(243 241 239);
 
     --dark-white: rgba(255, 255, 255, 1);

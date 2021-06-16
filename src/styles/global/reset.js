@@ -28,7 +28,7 @@ const GlobalStyles = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: var(--dar-black);
+    color: var(--dark-black);
   }
 
   li {

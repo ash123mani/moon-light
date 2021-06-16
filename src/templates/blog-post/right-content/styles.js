@@ -12,9 +12,10 @@ const ContentContainer = styled.div`
 `
 
 const Title = styled.h1`
-  font-size: 3.2rem;
-  /* font-weight: 400; */
-  padding: 2.4rem 0rem;
+  font-size: 3.6rem;
+  font-weight: 600;
+  padding: 2.4rem 0rem 4rem;
+  color: #003539;
 `
 
 export { Title, ContentContainer, RightContentContainer }

@@ -1,9 +1,11 @@
 /* eslint-disable react/display-name */
 import React from 'react'
-import { INLINES } from '@contentful/rich-text-types'
+import { INLINES, BLOCKS } from '@contentful/rich-text-types'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 
 import GatsbyLink from './A'
+import Text from './Text'
+import Heading from './Heading'
 
 const options = {
   renderNode: {
@@ -11,6 +13,37 @@ const options = {
       console.log('Node@options', node)
       return <GatsbyLink to={node.data.uri}>{children}</GatsbyLink>
     },
+    [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
+    [BLOCKS.HEADING_1]: (node, children) => (
+      <Heading as="h1" fs="3.2rem">
+        {children}
+      </Heading>
+    ),
+    [BLOCKS.HEADING_2]: (node, children) => (
+      <Heading as="h2" fs="2.8rem">
+        {children}
+      </Heading>
+    ),
+    [BLOCKS.HEADING_3]: (node, children) => (
+      <Heading as="h3" fs="2.4rem">
+        {children}
+      </Heading>
+    ),
+    [BLOCKS.HEADING_4]: (node, children) => (
+      <Heading as="h4" fs="2rem">
+        {children}
+      </Heading>
+    ),
+    [BLOCKS.HEADING_5]: (node, children) => (
+      <Heading as="h5" fs="1.8rem">
+        {children}
+      </Heading>
+    ),
+    [BLOCKS.HEADING_6]: (node, children) => (
+      <Heading as="h6" fs="1.8rem">
+        {children}
+      </Heading>
+    ),
   },
 }
 
