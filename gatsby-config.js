@@ -22,7 +22,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sitemap',
+    // 'gatsby-plugin-sitemap', // remove this
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
