@@ -11,7 +11,6 @@ function IndexPage({ data }) {
   const {
     allContentfulHomePageBanners: { nodes: banners },
   } = data
-  console.log('Index', data)
 
   return (
     <React.Fragment>

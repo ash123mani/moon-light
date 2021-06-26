@@ -10,7 +10,6 @@ import Heading from './Heading'
 const options = {
   renderNode: {
     [INLINES.HYPERLINK]: (node, children) => {
-      console.log('Node@options', node)
       return <GatsbyLink to={node.data.uri}>{children}</GatsbyLink>
     },
     [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
@@ -48,6 +47,5 @@ const options = {
 }
 
 export default function RichTextToDOM({ richTextJson }) {
-  console.log('richTextJson', richTextJson)
   return renderRichText(richTextJson, options)
 }

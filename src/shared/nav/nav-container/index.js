@@ -18,8 +18,6 @@ function NavContainer(props) {
   function handleNavTabClick(nav) {
     let newLinks = []
 
-    console.log('selected inside handleNavTabClick', selected)
-    console.log('selected nav.url', nav.url)
     if (selected.includes(nav.url)) {
       newLinks = selected.filter((item) => item !== nav.url)
     } else {
@@ -34,8 +32,6 @@ function NavContainer(props) {
       {navs.map((nav) => {
         const topUrl = nav.url
         const hasSubLinks = nav.pages && !!nav.pages.length
-        console.log('topUrl', topUrl)
-        console.log('selected-inside', selected)
         const isArrowSelected = selected.includes(topUrl) || currentPath.includes(nav.url)
         // currentPath.includes(nav.url)
         // const isCurrentUrlPartOfTree = hasSubLinks && currentPath.includes(nav.url)

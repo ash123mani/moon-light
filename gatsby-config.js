@@ -1,9 +1,11 @@
 /* eslint-disable no-undef */
 // eslint-disable-next-line no-undef
 
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
+if (process.env.NODE_ENV === 'development') {
+  require('dotenv').config({
+    path: `.env.${process.env.NODE_ENV}`,
+  })
+}
 
 module.exports = {
   siteMetadata: {
