@@ -16,7 +16,7 @@ const subNavArrowStyles = ({ hasSubLinks }) =>
   `
 
 const NavBox = styled.div`
-  background: ${({ isSelected }) => (isSelected ? 'var(--light-black)' : 'var(--transparent)')};
+  /* border: ${({ isSelected }) => (isSelected ? '1px solid var(--light-white)' : 'none')}; */
   display: flex;
   align-items: center;
   padding: 6px 12px;
@@ -26,6 +26,7 @@ const NavBox = styled.div`
   width: auto;
   margin: 8px;
   cursor: pointer;
+  /* border: 1px solid #ffffff5c; */
 
   /* ${subNavStyles}; */
   ${subNavArrowStyles}
@@ -33,7 +34,7 @@ const NavBox = styled.div`
 
 const Title = styled.span`
   font-size: 1.6rem;
-  color: var(--medium-black);
+  color: #ffffffc4;
 `
 const StyledLink = styled(Link)`
   font-size: 2rem;
@@ -45,13 +46,16 @@ const StyledIcon = styled(Icon)`
   padding: 4px;
 
   &:hover {
-    background-color: var(--light-black);
+    /* background-color: var(--light-black); */
     border-radius: 4px;
+    border: 1px solid var(--light-white);
   }
 `
 
 const LensIcon = styled(Icon)`
   margin-right: 8px;
+  height: 6px;
+  width: 6px;
 `
 
 export { NavBox, Title, StyledLink, StyledIcon, LensIcon }

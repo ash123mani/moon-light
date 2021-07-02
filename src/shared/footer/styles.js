@@ -15,13 +15,13 @@ const TopContent = styled.div`
 
 const Title = styled.div`
   font-size: 2rem;
-  color: var(--light-white);
+  color: var(--medium-white);
   margin-bottom: 1.2rem;
 `
 
 const About = styled.div`
   font-size: 1.4rem;
-  color: var(--light-white);
+  color: var(--medium-white);
 `
 
 const StyledDivider = styled(Divider)`
@@ -35,7 +35,7 @@ const BottomContainer = styled.div`
 
 const BottomTitle = styled.div`
   font-size: 1.6rem;
-  color: var(--light-white);
+  color: var(--medium-white);
   font-weight: bold;
 `
 
@@ -45,7 +45,7 @@ const AllLinks = styled.div`
 `
 
 const StyledLink = styled(Link)`
-  color: var(--light-white);
+  color: var(--medium-white);
   margin-top: 1.8rem;
   display: flex;
   align-items: center;

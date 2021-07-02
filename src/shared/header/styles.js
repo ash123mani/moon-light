@@ -17,6 +17,7 @@ const NonIndexPageHeader = styled.div`
   justify-content: center;
   padding: 2rem 1.4rem;
   border-bottom: 1px solid var(--border);
+  background: black;
 `
 
 export { Wrapper, NonIndexPageHeader }

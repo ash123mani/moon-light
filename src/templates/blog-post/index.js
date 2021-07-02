@@ -38,11 +38,15 @@ export const query = graphql`
       content {
         raw
       }
-      blogs {
-        pages {
-          title
-          subtitle
-          url
+    }
+
+    allContentfulTopPageBlogCards(filter: { url: { eq: $url } }) {
+      nodes {
+        url
+        title
+        shortDescription
+        image {
+          gatsbyImageData(placeholder: DOMINANT_COLOR, formats: [WEBP], layout: FULL_WIDTH, quality: 65)
         }
       }
     }
@@ -53,6 +57,9 @@ BlogPost.propTypes = {
   data: shape({
     allContentfulBlogPages: shape({
       edges: array.isRequired,
+    }),
+    allContentfulTopPageBlogCards: shape({
+      nodes: array.isRequired,
     }),
   }),
 }

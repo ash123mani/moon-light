@@ -29,7 +29,7 @@ const BlogCard = styled.div`
   ${orientationStyles};
 
   & img {
-    filter: grayscale(1);
+    filter: grayscale(0);
   }
 
   &:hover {
@@ -37,7 +37,7 @@ const BlogCard = styled.div`
   }
 
   &:hover img {
-    filter: grayscale(0);
+    filter: grayscale(1);
   }
 `
 

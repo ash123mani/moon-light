@@ -2,14 +2,14 @@ import { createGlobalStyle } from 'styled-components'
 
 const Global = createGlobalStyle`
   :root {
-    --dark-black: rgb(0 13 13);
+    --dark-black: rgb(0 0 0);
     --medium-black: rgb(0 0 0 / 62%);
     --medium1-black: #464e4e;
     --light-black: rgba(243 241 239);
 
     --dark-white: rgba(255, 255, 255, 1);
-    --medium-white: rgba(255, 255, 255, 0.8);
-    --light-white: rgba(255, 255, 255, 0.6);
+    --medium-white: rgba(255, 255, 255, 0.6);
+    --light-white: rgba(255, 255, 255, 0.3);
 
 
     --border: rgba(0, 0, 0, 0.12);

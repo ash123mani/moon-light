@@ -36,7 +36,7 @@ function Header({ path }) {
           <StaticImage
             placeholder="blurred"
             layout="fixed"
-            src="../../images/vnet-logo-black.svg"
+            src="../../images/vnet-logo-white.svg"
             alt="Vnet Machina"
             width={80}
             height={80}

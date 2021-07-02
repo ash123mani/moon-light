@@ -3,31 +3,31 @@ import { shape, array } from 'prop-types'
 
 import RichTextToDOM from '../../../shared/rich-text-to-dom'
 import Footer from '../../../shared/footer'
+import BlogCard from '../../../shared/blog-card'
 
-import SubBlogCard from './sub-blog-card'
 import { ContentContainer, Title, RightContentContainer } from './styles'
 
 function RightContent({ data }) {
   const {
-    contentfulBlogPages: { title, content, blogs, isTopContent },
+    contentfulBlogPages: { title, content },
+    allContentfulTopPageBlogCards: { nodes },
   } = data
-
-  const { pages = [] } = blogs || {}
 
   return (
     <RightContentContainer>
       <ContentContainer>
         <Title>{title}</Title>
-        {isTopContent ? (
-          pages.map((page) => {
-            const { title, subtitle: description, url } = page
+        {nodes.length > 0 ? (
+          nodes.map((node) => {
+            const { title, shortDescription, url, image } = node
 
-            return <SubBlogCard title={title} description={description} url={url} key={url} />
+            return <BlogCard title={title} description={shortDescription} url={url} key={title} image={image} />
           })
         ) : (
           <RichTextToDOM richTextJson={content} />
         )}
       </ContentContainer>
+
       <Footer style={{ padding: '4rem 8rem' }} />
     </RightContentContainer>
   )
