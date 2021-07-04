@@ -13,6 +13,7 @@ const orientationStyles = ({ orientation }) => {
     case 'default':
       return css`
         & {
+          border-right: 1px solid var(--border);
           border-left: none;
         }
       `
@@ -23,21 +24,21 @@ const BlogCard = styled.div`
   width: 100%;
   display: flex;
   transition: var(--card-transition);
-  border-radius: var(--border-radius-card);
-  border: 1px solid var(--border);
+  /* border-radius: var(--border-radius-card); */
+  /* border: 1px solid var(--border); */
 
-  ${orientationStyles};
+  ${orientationStyles}
 
   & img {
     filter: grayscale(0);
   }
 
-  &:hover {
-    box-shadow: var(--box-shadow-1);
-  }
-
   &:hover img {
     filter: grayscale(1);
+  }
+
+  &:hover {
+    box-shadow: var(--box-shadow-1);
   }
 `
 

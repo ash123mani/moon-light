@@ -3,7 +3,11 @@ import { string, object, oneOf } from 'prop-types'
 import { GatsbyImage } from 'gatsby-plugin-image'
 
 function DynamicImage({ image, altText, imgStyle, as, loading }) {
-  return <GatsbyImage as={as} image={image} alt={altText} loading={loading} style={imgStyle} />
+  return (
+    <div>
+      <GatsbyImage as={as} image={image} alt={altText} loading={loading} style={imgStyle} />
+    </div>
+  )
 }
 
 DynamicImage.propTypes = {

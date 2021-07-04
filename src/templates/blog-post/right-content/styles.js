@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import BlogCard from '../../../shared/blog-card'
+
 const RightContentContainer = styled.div`
   flex: 1;
   height: 100vh;
@@ -18,4 +20,14 @@ const Title = styled.h1`
   color: #003539;
 `
 
-export { Title, ContentContainer, RightContentContainer }
+const StyledCard = styled(BlogCard)`
+  & .blog-link .card .content .title {
+    font-size: 2.4rem;
+  }
+
+  & .blog-link .card .content .description {
+    font-size: 1.8rem;
+  }
+`
+
+export { Title, ContentContainer, RightContentContainer, StyledCard }

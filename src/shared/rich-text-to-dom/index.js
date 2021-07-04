@@ -6,6 +6,7 @@ import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import GatsbyLink from './A'
 import Text from './Text'
 import Heading from './Heading'
+import Image from './Image'
 
 const options = {
   renderNode: {
@@ -43,6 +44,13 @@ const options = {
         {children}
       </Heading>
     ),
+    [BLOCKS.EMBEDDED_ASSET]: (node) => {
+      const {
+        data: { target },
+      } = node
+
+      return <Image target={target} />
+    },
   },
 }
 

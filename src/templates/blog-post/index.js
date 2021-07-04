@@ -30,13 +30,20 @@ export const query = graphql`
     contentfulBlogPages(url: { eq: $url }) {
       url
       title
-      isTopContent
       createdAt
       bannerImage {
         gatsbyImageData(placeholder: DOMINANT_COLOR, formats: [WEBP], layout: FULL_WIDTH, quality: 65)
       }
       content {
         raw
+        references {
+          __typename
+          ... on ContentfulAsset {
+            contentful_id
+            gatsbyImageData
+            title
+          }
+        }
       }
     }
 

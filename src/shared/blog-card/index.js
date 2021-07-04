@@ -8,8 +8,8 @@ import { BlogCard as Card, Content, BlogTitle, BlogDescription } from './styles'
 
 function BlogCard({ title, description, image, link, altText, orientation, cardStyles }) {
   return (
-    <Link to={link}>
-      <Card orientation={orientation} style={cardStyles}>
+    <Link to={link} className="blog-link">
+      <Card orientation={orientation} style={cardStyles} className="card">
         {image && (
           <Image
             alt={altText}

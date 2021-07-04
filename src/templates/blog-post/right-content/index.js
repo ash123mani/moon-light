@@ -3,9 +3,8 @@ import { shape, array } from 'prop-types'
 
 import RichTextToDOM from '../../../shared/rich-text-to-dom'
 import Footer from '../../../shared/footer'
-import BlogCard from '../../../shared/blog-card'
 
-import { ContentContainer, Title, RightContentContainer } from './styles'
+import { ContentContainer, Title, RightContentContainer, StyledCard } from './styles'
 
 function RightContent({ data }) {
   const {
@@ -18,10 +17,25 @@ function RightContent({ data }) {
       <ContentContainer>
         <Title>{title}</Title>
         {nodes.length > 0 ? (
-          nodes.map((node) => {
+          nodes.map((node, index) => {
             const { title, shortDescription, url, image } = node
 
-            return <BlogCard title={title} description={shortDescription} url={url} key={title} image={image} />
+            let orientation = 'default'
+            if (index % 2 == 0) {
+              orientation = 'reverse'
+            }
+
+            return (
+              <StyledCard
+                title={title}
+                description={shortDescription}
+                link={url}
+                key={title}
+                image={image}
+                orientation={orientation}
+                cardStyles={{ marginBottom: '8rem' }}
+              />
+            )
           })
         ) : (
           <RichTextToDOM richTextJson={content} />
