@@ -12,6 +12,9 @@ module.exports = {
     title: 'vnet-macina',
     url: process.env.URL,
   },
+  flags: {
+    DEV_SSR: true,
+  },
   plugins: [
     'gatsby-plugin-gatsby-cloud',
     'gatsby-plugin-image',

@@ -6,7 +6,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 
 import Link from '../../common/link'
 
-import { Wrapper, NonIndexPageHeader } from './styles'
+import { Wrapper } from './styles'
 
 function Header({ path }) {
   const data = useStaticQuery(graphql`
@@ -30,41 +30,24 @@ function Header({ path }) {
   } = data
 
   if (path !== '/') {
-    return (
-      <NonIndexPageHeader>
-        <Link to="/">
-          <StaticImage
-            placeholder="blurred"
-            layout="fixed"
-            src="../../images/vnet-logo-white.svg"
-            alt="Vnet Machina"
-            width={80}
-            height={80}
-            as="div"
-            loading="eager"
-          />
-        </Link>
-      </NonIndexPageHeader>
-    )
+    return null
   }
 
   return (
     // <Headroom style={{ zIndex: '9999' }}>
     <Wrapper>
-      <div>
-        <Link to="/">
-          <StaticImage
-            placeholder="blurred"
-            layout="fixed"
-            src="../../images/vnet-logo-black.svg"
-            alt="Vnet Machina"
-            width={80}
-            height={80}
-            as="div"
-            loading="eager"
-          />
-        </Link>
-      </div>
+      <Link to="/">
+        <StaticImage
+          placeholder="blurred"
+          layout="fixed"
+          src="../../images/vnet-logo-black.svg"
+          alt="Vnet Machina"
+          width={80}
+          height={80}
+          as="div"
+          loading="eager"
+        />
+      </Link>
 
       <div style={{ zIndex: -11 }}>
         {heading.map((data, index) => {

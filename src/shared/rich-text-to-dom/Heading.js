@@ -7,7 +7,7 @@ const headingStyle = css`
   font-size: 2.4rem;
   font-size: ${({ fs }) => fs || '2.4rem'};
   font-weight: 600;
-  color: var(--medium1-black);
+  color: var(--dark-black);
 `
 
 const HeadingBox = styled.div`

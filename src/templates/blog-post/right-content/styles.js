@@ -4,20 +4,34 @@ import BlogCard from '../../../shared/blog-card'
 
 const RightContentContainer = styled.div`
   flex: 1;
-  height: 100vh;
-  overflow: auto;
+  height: auto;
+  position: relative;
 `
 
 const ContentContainer = styled.div`
-  padding: 4rem 8rem 8rem;
   width: 100%;
+  min-height: 100vh;
+  height: auto;
+  position: relative;
 `
 
 const Title = styled.h1`
   font-size: 3.6rem;
   font-weight: 600;
-  padding: 2.4rem 0rem 4rem;
-  color: #003539;
+  height: 120px;
+  padding: 0rem 8rem;
+  display: flex;
+  align-items: center;
+  color: var(--dark-black);
+  border-bottom: 1px solid var(--border);
+  /* position: sticky;
+  top: 0; */
+  /* z-index: 2; */
+  background-color: white;
+`
+
+const Content = styled.div`
+  padding: 4rem 8rem;
 `
 
 const StyledCard = styled(BlogCard)`
@@ -30,4 +44,4 @@ const StyledCard = styled(BlogCard)`
   }
 `
 
-export { Title, ContentContainer, RightContentContainer, StyledCard }
+export { Title, ContentContainer, Content, RightContentContainer, StyledCard }

@@ -18,7 +18,7 @@ function BlogPost({ data }) {
     <React.Fragment>
       <SEO title={title} />
       <Container>
-        <LeftContent />
+        <LeftContent title={title} />
         <RightContent data={data} />
       </Container>
     </React.Fragment>

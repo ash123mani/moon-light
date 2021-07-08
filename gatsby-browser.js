@@ -6,7 +6,7 @@ import Layout from './src/shared/layout'
 const wrapPageElement = ({ element, props }) => {
   WebFont.load({
     google: {
-      families: ['Open+Sans:300,400,500,600', 'sans-serif'],
+      families: ['Noto Sans JP:300,400,500,700', 'sans-serif'],
     },
   })
 

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import NavMenu from '../../../components/blog-page/nav-menu'
-import Header from '../../../shared/header'
+import Header from './header'
 
 import { NavContainer } from './styles'
 

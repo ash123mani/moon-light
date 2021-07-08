@@ -1,5 +1,11 @@
 import styled, { css } from 'styled-components'
 
+const Content = styled.div`
+  padding: 2rem 4rem;
+  flex: 1;
+  border-radius: 8px;
+`
+
 const orientationStyles = ({ orientation }) => {
   switch (orientation) {
     case 'reverse':
@@ -7,14 +13,22 @@ const orientationStyles = ({ orientation }) => {
         & {
           flex-direction: row-reverse;
           border-right: none;
-          border-left: 1px solid var(--border);
+        }
+
+        ${Content} {
+          border: 1px solid var(--border);
+          margin-right: 8px;
         }
       `
     case 'default':
       return css`
         & {
-          border-right: 1px solid var(--border);
           border-left: none;
+        }
+
+        ${Content} {
+          border: 1px solid var(--border);
+          margin-left: 8px;
         }
       `
   }
@@ -42,19 +56,14 @@ const BlogCard = styled.div`
   }
 `
 
-const Content = styled.div`
-  padding: 2rem 4rem;
-  flex: 1;
-`
-
 const BlogTitle = styled.div`
-  font-size: 3.2rem;
+  font-size: 2.4rem;
   font-weight: 400;
   color: var(--dark-black);
 `
 
 const BlogDescription = styled.div`
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-top: 1.2rem;
   color: var(--medium-black);
 `

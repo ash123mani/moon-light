@@ -19,7 +19,7 @@ function MiscBlogs({ miscBlogs }) {
           }
 
           return (
-            <div style={{ marginBottom: '8rem' }} key={index}>
+            <div style={{ marginBottom: '4rem' }} key={index}>
               <BlogCard
                 title={title}
                 description={description}
@@ -27,7 +27,7 @@ function MiscBlogs({ miscBlogs }) {
                 link={banneLink}
                 altText={altText}
                 orientation={orientation}
-                cardStyles={{ height: '300px' }}
+                cardStyles={{ height: '260px' }}
               />
             </div>
           )

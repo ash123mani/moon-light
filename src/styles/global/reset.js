@@ -22,8 +22,8 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: 'Open+Sans', sans-serif;
-    line-height: 1.4;
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.8;
   }
 
   a {

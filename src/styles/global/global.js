@@ -19,7 +19,7 @@ const Global = createGlobalStyle`
 
     --transparent: transparent;
 
-    --box-shadow-1: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    --box-shadow-1: rgb(0 0 0 / 12%) 0px 0px 7px 0px,rgba(0,0,0,0.06) 0px 2px 4px -1px;
 
     --card-transition: transform 0.15s ease-out 0s, border-color 0.15s ease-out 0s, box-shadow 0.15s ease-out 0s;
   }

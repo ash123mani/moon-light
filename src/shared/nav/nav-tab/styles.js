@@ -6,20 +6,24 @@ import Link from '../../../common/link'
 const subNavStyles = ({ showArrow }) =>
   !showArrow &&
   css`
-    margin-left: 60px;
+    /* margin-left: 60px; */
   `
 
 const subNavArrowStyles = ({ hasSubLinks }) =>
-  !hasSubLinks &&
-  css`
-    /* margin-left: 24px; */
-  `
+  !hasSubLinks
+    ? css`
+        margin-left: 24px;
+        /* padding-left: 0px; */
+      `
+    : css`
+        margin-left: 12px;
+      `
 
 const NavBox = styled.div`
-  /* border: ${({ isSelected }) => (isSelected ? '1px solid var(--light-white)' : 'none')}; */
+  border: ${({ isSelected }) => (isSelected ? '1px solid var(--light-white)' : 'none')};
   display: flex;
   align-items: center;
-  padding: 6px 12px;
+  padding: 4px 12px;
   border-radius: 4px;
   max-width: 240px;
   min-width: 240px;

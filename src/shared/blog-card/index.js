@@ -17,6 +17,7 @@ function BlogCard({ title, description, image, link, altText, orientation, cardS
             imgStyle={{
               width: '350px',
               height: '100%',
+              borderRadius: '8px',
             }}
           />
         )}

@@ -35,14 +35,14 @@ Link.propTypes = {
   activeClassName: string,
   partiallyActive: bool,
   activeStyle: object,
-  asbutton: bool,
+  asButton: bool,
 }
 
 Link.defaultProps = {
   partiallyActive: false,
   activeStyle: {},
   activeClassName: '',
-  asbutton: false,
+  asButton: false,
 }
 
 export default Link

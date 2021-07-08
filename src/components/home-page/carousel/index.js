@@ -31,7 +31,11 @@ function ImageCarousel({ blogs }) {
         return (
           <Link key={index} to={banneLink}>
             <ContentWrapper>
-              <Image altText={altText} image={image.gatsbyImageData} imgStyle={{ width: '100vw', height: '100%' }} />
+              <Image
+                altText={altText}
+                image={image.gatsbyImageData}
+                imgStyle={{ width: '100vw', height: 'calc(100vh - 133px)' }}
+              />
               <TextWrapper>
                 <Title>{title}</Title>
                 <Description>{description}</Description>
