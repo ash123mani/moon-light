@@ -1,11 +1,39 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import BlogCard from '../../../shared/blog-card'
+import Icon from '../../../common/icon'
+import Footer from '../../../shared/footer'
+
+const expand = css`
+  transition-property: padding;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in;
+`
+
+const animate = ({ isCollapsed }) => {
+  return (
+    isCollapsed &&
+    css`
+      padding-left: 30rem;
+      padding-right: 30rem;
+    `
+  )
+}
+
+const animateExpandIcon = ({ isCollapsed }) => {
+  return isCollapsed
+    ? css`
+        transform: translateX(0%);
+      `
+    : css`
+        transform: translateX(-100%);
+      `
+}
 
 const RightContentContainer = styled.div`
   flex: 1;
   height: auto;
-  position: relative;
+  /* position: relative; */
 `
 
 const ContentContainer = styled.div`
@@ -15,23 +43,40 @@ const ContentContainer = styled.div`
   position: relative;
 `
 
-const Title = styled.h1`
-  font-size: 3.6rem;
-  font-weight: 600;
+const TitleContainer = styled.div`
   height: 120px;
   padding: 0rem 8rem;
   display: flex;
   align-items: center;
-  color: var(--dark-black);
+  flex: 1;
   border-bottom: 1px solid var(--border);
-  /* position: sticky;
-  top: 0; */
-  /* z-index: 2; */
-  background-color: white;
+  /* position: relative; */
+  ${animate}
+  ${expand};
+`
+
+const Title = styled.h1`
+  font-size: 3.6rem;
+  font-weight: 600;
+  color: var(--dark-black);
+`
+
+const StyledIcon = styled(Icon)`
+  position: fixed;
+  left: 0;
+  top: 106px;
+  cursor: pointer;
+  height: 28px;
+  width: 28px;
+  transition: transform 0.5s;
+  transition-delay: ${({ isCollapsed }) => (isCollapsed ? '0.5s' : '0s')};
+  ${animateExpandIcon};
 `
 
 const Content = styled.div`
   padding: 4rem 8rem;
+  ${expand};
+  ${animate};
 `
 
 const StyledCard = styled(BlogCard)`
@@ -44,4 +89,10 @@ const StyledCard = styled(BlogCard)`
   }
 `
 
-export { Title, ContentContainer, Content, RightContentContainer, StyledCard }
+const StyledFooter = styled(Footer)`
+  padding: 4rem 8rem;
+  ${expand};
+  ${animate};
+`
+
+export { TitleContainer, Title, StyledIcon, ContentContainer, Content, RightContentContainer, StyledCard, StyledFooter }

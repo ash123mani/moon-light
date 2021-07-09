@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { shape, array } from 'prop-types'
 import { graphql } from 'gatsby'
 
@@ -10,16 +10,21 @@ import LeftContent from './left-content'
 import { Container } from './styles'
 
 function BlogPost({ data }) {
+  const [isCollapsed, setIsCollapsed] = useState(false)
   const {
     contentfulBlogPages: { title },
   } = data
+
+  const handleCollapse = (flag) => {
+    setIsCollapsed(flag)
+  }
 
   return (
     <React.Fragment>
       <SEO title={title} />
       <Container>
-        <LeftContent title={title} />
-        <RightContent data={data} />
+        <LeftContent title={title} onCollapse={handleCollapse} isCollapsed={isCollapsed} />
+        <RightContent data={data} isCollapsed={isCollapsed} onCollapse={handleCollapse} />
       </Container>
     </React.Fragment>
   )

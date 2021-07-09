@@ -12,11 +12,11 @@ const subNavStyles = ({ showArrow }) =>
 const subNavArrowStyles = ({ hasSubLinks }) =>
   !hasSubLinks
     ? css`
-        margin-left: 24px;
+        margin-left: 18px;
         /* padding-left: 0px; */
       `
     : css`
-        margin-left: 12px;
+        margin-left: 0px;
       `
 
 const NavBox = styled.div`
@@ -56,10 +56,10 @@ const StyledIcon = styled(Icon)`
   }
 `
 
-const LensIcon = styled(Icon)`
-  margin-right: 8px;
-  height: 6px;
-  width: 6px;
-`
+// const LensIcon = styled(Icon)`
+//   margin-right: 8px;
+//   height: 6px;
+//   width: 6px;
+// `
 
-export { NavBox, Title, StyledLink, StyledIcon, LensIcon }
+export { NavBox, Title, StyledLink, StyledIcon }

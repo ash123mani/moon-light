@@ -1,22 +1,37 @@
 import React from 'react'
-import { shape, array } from 'prop-types'
+import { shape, array, func, bool } from 'prop-types'
 
 import RichTextToDOM from '../../../shared/rich-text-to-dom'
-import Footer from '../../../shared/footer'
 
-import { ContentContainer, Content, Title, RightContentContainer, StyledCard } from './styles'
+import {
+  ContentContainer,
+  Content,
+  TitleContainer,
+  Title,
+  StyledIcon,
+  RightContentContainer,
+  StyledCard,
+  StyledFooter,
+} from './styles'
 
-function RightContent({ data }) {
+function RightContent({ data, onCollapse, isCollapsed }) {
   const {
     contentfulBlogPages: { title, content },
     allContentfulTopPageBlogCards: { nodes },
   } = data
 
+  const handleExpand = () => {
+    onCollapse(!isCollapsed)
+  }
+
   return (
     <RightContentContainer>
       <ContentContainer>
-        <Title>{title}</Title>
-        <Content>
+        <TitleContainer isCollapsed={isCollapsed}>
+          <Title>{title}</Title>
+          <StyledIcon name="shrink" onClick={handleExpand} isCollapsed={isCollapsed} />
+        </TitleContainer>
+        <Content isCollapsed={isCollapsed}>
           {nodes.length > 0 ? (
             nodes.map((node, index) => {
               const { title, shortDescription, url, image } = node
@@ -44,7 +59,7 @@ function RightContent({ data }) {
         </Content>
       </ContentContainer>
 
-      <Footer style={{ padding: '4rem 8rem' }} />
+      <StyledFooter isCollapsed={isCollapsed} />
     </RightContentContainer>
   )
 }
@@ -55,6 +70,12 @@ RightContent.propTypes = {
       edges: array.isRequired,
     }),
   }),
+  onCollapse: func.isRequired,
+  isCollapsed: bool,
+}
+
+RightContent.defaultProps = {
+  isCollapsed: false,
 }
 
 export default RightContent

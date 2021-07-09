@@ -1,11 +1,16 @@
 import React from 'react'
+import { func, bool } from 'prop-types'
 import { StaticImage } from 'gatsby-plugin-image'
 
 import Link from '../../../../common/link'
 
-import { NonIndexPageHeader } from './styles'
+import { NonIndexPageHeader, StyledIcon } from './styles'
 
-function BlogPageHeader() {
+function BlogPageHeader({ onShrinkClick, isCollapsed }) {
+  const handleExpand = () => {
+    onShrinkClick(!isCollapsed)
+  }
+
   return (
     <NonIndexPageHeader>
       <Link to="/">
@@ -20,8 +25,18 @@ function BlogPageHeader() {
           loading="eager"
         />
       </Link>
+      {!isCollapsed && <StyledIcon name="shrink" onClick={handleExpand} />}
     </NonIndexPageHeader>
   )
+}
+
+BlogPageHeader.propTypes = {
+  onShrinkClick: func.isRequired,
+  isCollapsed: bool,
+}
+
+BlogPageHeader.defaultProps = {
+  isCollapsed: false,
 }
 
 export default BlogPageHeader
