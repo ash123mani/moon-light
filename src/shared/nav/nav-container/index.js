@@ -6,7 +6,7 @@ import NavTab from '../nav-tab'
 import { Container, NavContent } from './styles'
 
 function NavContainer(props) {
-  const { navs, isTop = true } = props
+  const { navs, isTop = true, isItOpen } = props
 
   const currentPath = typeof window !== 'undefined' ? window.location.pathname : ''
   const [selected, setSelected] = useState([])
@@ -43,7 +43,7 @@ function NavContainer(props) {
         }
 
         return (
-          <NavContent key={nav.url} isTop={isTop}>
+          <NavContent key={nav.url} isTop={isTop} isItOpen={isTop ? true : isItOpen} className={isItOpen && 'yes-open'}>
             <NavTab
               showArrow={isTop}
               url={nav.url}
@@ -53,7 +53,7 @@ function NavContainer(props) {
               hasSubLinks={hasSubLinks}
             />
 
-            {isOpen && hasSubLinks && <NavContainer navs={nav.pages} isTop={false} />}
+            {hasSubLinks ? <NavContainer navs={nav.pages} isTop={false} isItOpen={isOpen} /> : null}
           </NavContent>
         )
       })}
@@ -64,11 +64,13 @@ function NavContainer(props) {
 NavContainer.propTypes = {
   navs: array.isRequired,
   isTop: bool,
-  currentPath: string.isRe,
+  currentPath: string.isRequired,
+  isItOpen: bool,
 }
 
 NavContainer.defaultProps = {
   isTop: true,
+  isItOpen: false,
 }
 
 export default NavContainer
