@@ -8,7 +8,6 @@ import Footer from '../footer'
 import { ResetStyles, GlobalVariables, theme } from '../../styles/global'
 
 function Layout(props) {
-  console.log('props', props)
   const {
     children,
     location: { pathname },

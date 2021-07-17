@@ -35,6 +35,10 @@ const StyledCarousel = styled(Carousel)`
   & .react-multi-carousel-track .react-multi-carousel-item--active h2 {
     animation: ${fadeInUp} 1s ease-in-out;
   }
+
+  & .react-multiple-carousel__arrow {
+    background-color: var(--light-white);
+  }
 `
 
 export { ContentWrapper, Title, Description, StyledCarousel, TextWrapper }

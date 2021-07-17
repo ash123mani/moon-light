@@ -34,7 +34,7 @@ function RightContent({ data, onCollapse, isCollapsed }) {
         <Content isCollapsed={isCollapsed}>
           {nodes.length > 0 ? (
             nodes.map((node, index) => {
-              const { title, shortDescription, url, image } = node
+              const { title, shortDescription, cardUrl, image } = node
 
               let orientation = 'default'
               if (index % 2 == 0) {
@@ -45,7 +45,7 @@ function RightContent({ data, onCollapse, isCollapsed }) {
                 <StyledCard
                   title={title}
                   description={shortDescription}
-                  link={url}
+                  link={cardUrl}
                   key={title}
                   image={image}
                   orientation={orientation}

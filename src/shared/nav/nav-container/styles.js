@@ -24,10 +24,10 @@ const animate = ({ isItOpen }) => {
 const NavContent = styled.div`
   padding-left: 8px;
   transition-property: transform;
-  transform: translateX(-40px);
+  /* transform: translateX(-40px); */
   transition-duration: 0.4s;
   transition-timing-function: linear;
-  ${animate};
+  /* ${animate}; */
   ${parentNavBorder}
 `
 

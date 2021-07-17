@@ -11,7 +11,7 @@ function MiscBlogs({ miscBlogs }) {
       <Title>Hot Blogs</Title>
       <Wrapper>
         {miscBlogs.map((blog, index) => {
-          const { title, description, image, banneLink, altText } = blog
+          const { title, subtTitle, imageUrl, blogUrl } = blog
 
           let orientation = 'default'
           if (index % 2 == 0) {
@@ -22,12 +22,11 @@ function MiscBlogs({ miscBlogs }) {
             <div style={{ marginBottom: '4rem' }} key={index}>
               <BlogCard
                 title={title}
-                description={description}
-                image={image}
-                link={banneLink}
-                altText={altText}
+                description={subtTitle}
+                image={imageUrl}
+                link={blogUrl}
                 orientation={orientation}
-                cardStyles={{ height: '260px' }}
+                cardStyles={{ minHeight: '260px' }}
               />
             </div>
           )

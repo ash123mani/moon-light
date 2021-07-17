@@ -24,7 +24,17 @@ const responsive = {
 
 function ImageCarousel({ blogs }) {
   return (
-    <StyledCarousel ssr partialVisbile itemClass="image-item" responsive={responsive} deviceType="desktop" infinite>
+    <StyledCarousel
+      ssr
+      partialVisbile
+      itemClass="image-item"
+      responsive={responsive}
+      deviceType="desktop"
+      infinite
+      autoPlay
+      autoPlaySpeed={4000}
+      showDots
+    >
       {blogs.map((blog, index) => {
         const { title, description, image, banneLink, altText } = blog
 
@@ -34,7 +44,7 @@ function ImageCarousel({ blogs }) {
               <Image
                 altText={altText}
                 image={image.gatsbyImageData}
-                imgStyle={{ width: '100vw', height: 'calc(100vh - 133px)' }}
+                imgStyle={{ width: '100vw', height: 'calc(100vh - 113px)' }}
               />
               <TextWrapper>
                 <Title>{title}</Title>

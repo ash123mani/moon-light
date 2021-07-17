@@ -53,7 +53,7 @@ function NavContainer(props) {
               hasSubLinks={hasSubLinks}
             />
 
-            {hasSubLinks ? <NavContainer navs={nav.pages} isTop={false} isItOpen={isOpen} /> : null}
+            {hasSubLinks && isOpen ? <NavContainer navs={nav.pages} isTop={false} isItOpen={isOpen} /> : null}
           </NavContent>
         )
       })}

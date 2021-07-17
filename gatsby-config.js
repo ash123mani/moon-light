@@ -48,6 +48,7 @@ module.exports = {
       options: {
         displayName: true,
         pure: true,
+        ssr: true,
       },
     },
     // for pulling content types, entries, and assets into Gatsby from Contentful spaces

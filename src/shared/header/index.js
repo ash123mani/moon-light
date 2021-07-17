@@ -5,6 +5,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 // import Headroom from 'react-headroom'
 
 import Link from '../../common/link'
+import blackLogo from '../../images/vnet-logo-black.svg'
 
 import { Wrapper } from './styles'
 

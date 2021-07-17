@@ -54,7 +54,7 @@ export const query = graphql`
 
     allContentfulTopPageBlogCards(filter: { url: { eq: $url } }) {
       nodes {
-        url
+        cardUrl
         title
         shortDescription
         image {

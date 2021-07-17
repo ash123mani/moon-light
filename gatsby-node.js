@@ -27,7 +27,7 @@ exports.createPages = ({ graphql, actions }) => {
         path: node.url,
         component: blogPostTemplate,
         context: {
-          url: node.url,
+          url: node.url || '',
         },
       })
     })

@@ -4,6 +4,7 @@ const Content = styled.div`
   padding: 2rem 4rem;
   flex: 1;
   border-radius: 8px;
+  transition: var(--card-transition);
 `
 
 const orientationStyles = ({ orientation }) => {
@@ -37,9 +38,6 @@ const orientationStyles = ({ orientation }) => {
 const BlogCard = styled.div`
   width: 100%;
   display: flex;
-  transition: var(--card-transition);
-  /* border-radius: var(--border-radius-card); */
-  /* border: 1px solid var(--border); */
 
   ${orientationStyles}
 
@@ -52,7 +50,9 @@ const BlogCard = styled.div`
   }
 
   &:hover {
-    box-shadow: var(--box-shadow-1);
+    ${Content} {
+      box-shadow: var(--box-shadow-1);
+    }
   }
 `
 
