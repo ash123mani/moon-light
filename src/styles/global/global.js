@@ -8,7 +8,6 @@ const Global = createGlobalStyle`
     --light-black: rgba(243 241 239);
 
     --dark-white: rgba(255, 255, 255, 1);
-    --medium-white: rgba(255, 255, 255, 0.6);
     --light-white: rgba(255, 255, 255, 0.3);
 
 

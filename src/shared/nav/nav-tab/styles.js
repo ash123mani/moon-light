@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components'
 
 import Icon from '../../../common/icon'
-import Link from '../../../common/link'
 
 const subNavStyles = ({ showArrow }) =>
   !showArrow &&
@@ -38,9 +37,6 @@ const Title = styled.span`
   font-size: 1.6rem;
   color: #ffffffc4;
 `
-const StyledLink = styled(Link)`
-  font-size: 2rem;
-`
 
 const StyledIcon = styled(Icon)`
   transform: ${({ isSelected }) => (isSelected ? 'rotate(90deg)' : '')};
@@ -54,4 +50,4 @@ const StyledIcon = styled(Icon)`
   }
 `
 
-export { NavBox, Title, StyledLink, StyledIcon }
+export { NavBox, Title, StyledIcon }

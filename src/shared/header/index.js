@@ -5,7 +5,6 @@ import { StaticImage } from 'gatsby-plugin-image'
 // import Headroom from 'react-headroom'
 
 import Link from '../../common/link'
-import blackLogo from '../../images/vnet-logo-black.svg'
 
 import { Wrapper } from './styles'
 
@@ -54,7 +53,7 @@ function Header({ path }) {
         {heading.map((data, index) => {
           return (
             <React.Fragment key={index}>
-              <Link to={data.link} asButton style={{ marginLeft: '20px' }}>
+              <Link to={data.link} asButton style={{ marginLeft: '20px', fontWeight: 'bold' }}>
                 {data.title}
               </Link>
             </React.Fragment>

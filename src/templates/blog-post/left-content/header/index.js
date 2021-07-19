@@ -25,7 +25,7 @@ function BlogPageHeader({ onShrinkClick, isCollapsed }) {
           loading="eager"
         />
       </Link>
-      {!isCollapsed && <StyledIcon name="shrink" onClick={handleExpand} />}
+      {!isCollapsed && <StyledIcon name="expand" onClick={handleExpand} />}
     </NonIndexPageHeader>
   )
 }

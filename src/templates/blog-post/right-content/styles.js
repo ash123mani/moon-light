@@ -26,7 +26,7 @@ const animateExpandIcon = ({ isCollapsed }) => {
         transform: translateX(0%);
       `
     : css`
-        transform: translateX(-100%);
+        transform: translateX(-200%);
       `
 }
 
@@ -63,11 +63,14 @@ const Title = styled.h1`
 
 const StyledIcon = styled(Icon)`
   position: fixed;
-  left: 0;
-  top: 106px;
+  left: 10px;
+  top: 124px;
   cursor: pointer;
-  height: 28px;
-  width: 28px;
+  height: 18px;
+  width: 18px;
+  padding: 4px;
+  background: var(--medium-black);
+  border-radius: 4px;
   transition: transform 0.5s;
   transition-delay: ${({ isCollapsed }) => (isCollapsed ? '0.5s' : '0s')};
   ${animateExpandIcon};

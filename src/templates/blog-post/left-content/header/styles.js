@@ -15,12 +15,14 @@ const NonIndexPageHeader = styled.div`
 
 const StyledIcon = styled(Icon)`
   position: absolute;
-  bottom: -14px;
-  right: 0;
+  bottom: -32px;
+  right: 8px;
   cursor: pointer;
-  height: 28px;
-  width: 28px;
-  transform: rotate(180deg);
+  height: 18px;
+  width: 18px;
+  padding: 4px;
+  border-radius: 4px;
+  background: var(--medium1-black);
 `
 
 export { NonIndexPageHeader, StyledIcon }
