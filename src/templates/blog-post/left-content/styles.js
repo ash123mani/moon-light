@@ -11,7 +11,6 @@ const expand = ({ isCollapsed }) => {
 
 const NavContainer = styled.aside`
   height: 100vh;
-  /* border-right: 1px solid var(--light-white); */
   position: sticky;
   top: 0px;
   overflow: auto;

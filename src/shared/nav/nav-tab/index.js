@@ -10,12 +10,9 @@ function NavTab({ title, url, onClick, showArrow, isSelected, hasSubLinks }) {
 
   return (
     <NavBox showArrow={showArrow} hasSubLinks={hasSubLinks} isSelected={url === currentPath} onClick={onClick}>
-      {
-        hasSubLinks ? <StyledIcon name="arrow-forward" isSelected={isSelected} height="12px" width="12px" /> : null
-        // <LensIcon name="lens" height="8px" width="8px" />
-      }
+      {hasSubLinks ? <StyledIcon name="arrow-forward" isSelected={isSelected} height="12px" width="12px" /> : null}
 
-      <Link to={url}>
+      <Link to={url} style={{ overflow: 'hidden' }}>
         <Title>{title}</Title>
       </Link>
     </NavBox>

@@ -17,7 +17,6 @@ const Title = styled.h1`
   color: var(--dark-white);
   font-size: 4.2rem;
   line-height: 1;
-  /* animation: ${fadeInUp} 1s linear; */
 `
 
 const Description = styled.h2`

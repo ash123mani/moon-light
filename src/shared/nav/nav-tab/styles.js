@@ -2,12 +2,6 @@ import styled, { css } from 'styled-components'
 
 import Icon from '../../../common/icon'
 
-const subNavStyles = ({ showArrow }) =>
-  !showArrow &&
-  css`
-    /* margin-left: 60px; */
-  `
-
 const subNavArrowStyles = ({ hasSubLinks }) =>
   !hasSubLinks
     ? css`
@@ -28,14 +22,15 @@ const NavBox = styled.div`
   width: auto;
   margin: 8px;
   cursor: pointer;
-
-  /* ${subNavStyles}; */
   ${subNavArrowStyles}
 `
 
-const Title = styled.span`
+const Title = styled.p`
   font-size: 1.6rem;
-  color: #ffffffc4;
+  color: var(--medium-white);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `
 
 const StyledIcon = styled(Icon)`

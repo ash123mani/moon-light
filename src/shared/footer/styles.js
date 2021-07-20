@@ -8,10 +8,7 @@ const Container = styled.div`
   background: var(--dark-black);
 `
 
-const TopContent = styled.div`
-  /* border-bottom: 1px solid var(--light-white); */
-  /* padding-bottom: 4rem; */
-`
+const TopContent = styled.div``
 
 const Title = styled.div`
   font-size: 2rem;

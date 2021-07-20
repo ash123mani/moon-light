@@ -2,6 +2,7 @@ import React from 'react'
 import { shape, array, func, bool } from 'prop-types'
 
 import RichTextToDOM from '../../../shared/rich-text-to-dom'
+import Comments from '../../../components/comments'
 
 import {
   ContentContainer,
@@ -19,6 +20,7 @@ function RightContent({ data, onCollapse, isCollapsed }) {
     contentfulBlogPages: { title, content },
     allContentfulTopPageBlogCards: { nodes },
   } = data
+  const isTopSection = !!nodes.length
 
   const handleExpand = () => {
     onCollapse(!isCollapsed)
@@ -31,8 +33,8 @@ function RightContent({ data, onCollapse, isCollapsed }) {
           <Title>{title}</Title>
           <StyledIcon name="shrink" onClick={handleExpand} isCollapsed={isCollapsed} />
         </TitleContainer>
-        <Content isCollapsed={isCollapsed}>
-          {nodes.length > 0 ? (
+        <Content isCollapsed={isCollapsed} isTopSection={isTopSection}>
+          {isTopSection ? (
             nodes.map((node, index) => {
               const { title, shortDescription, cardUrl, image } = node
 
@@ -56,6 +58,7 @@ function RightContent({ data, onCollapse, isCollapsed }) {
           ) : (
             <RichTextToDOM richTextJson={content} />
           )}
+          {!isTopSection && <Comments />}
         </Content>
       </ContentContainer>
 

@@ -8,14 +8,12 @@ const Global = createGlobalStyle`
     --light-black: rgba(243 241 239);
 
     --dark-white: rgba(255, 255, 255, 1);
-    --medium-white: rgba(255, 255, 255, 0.6);
+    --medium-white: rgba(255, 255, 255, 0.77);
     --light-white: rgba(255, 255, 255, 0.3);
 
 
     --border: rgba(0, 0, 0, 0.12);
     --border-radius-card: 4px;
-
-    --dunzo: rgb(23, 30, 48);
 
     --transparent: transparent;
 

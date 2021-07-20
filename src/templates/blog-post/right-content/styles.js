@@ -14,8 +14,18 @@ const animate = ({ isCollapsed }) => {
   return (
     isCollapsed &&
     css`
-      padding-left: 30rem;
-      padding-right: 30rem;
+      /* padding-left: 30rem;
+      padding-right: 30rem; */
+    `
+  )
+}
+
+const topSectionStyle = ({ isTopSection }) => {
+  return (
+    isTopSection &&
+    css`
+      max-width: unset;
+      padding: 4rem 10rem;
     `
   )
 }
@@ -45,7 +55,8 @@ const ContentContainer = styled.div`
 
 const TitleContainer = styled.div`
   height: 120px;
-  padding: 0rem 8rem;
+  /* max-width: 800px; */
+  margin: 0 auto;
   display: flex;
   align-items: center;
   flex: 1;
@@ -56,9 +67,17 @@ const TitleContainer = styled.div`
 `
 
 const Title = styled.h1`
-  font-size: 3.6rem;
+  font-size: 3.2rem;
   font-weight: 600;
+  width: 100%;
+  text-align: center;
   color: var(--dark-black);
+  height: inherit;
+  margin: 0 auto;
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 const StyledIcon = styled(Icon)`
@@ -77,9 +96,12 @@ const StyledIcon = styled(Icon)`
 `
 
 const Content = styled.div`
-  padding: 4rem 8rem;
+  padding: 4rem 0rem;
+  max-width: 800px;
+  margin: 0 auto;
   ${expand};
   ${animate};
+  ${topSectionStyle};
 `
 
 const StyledCard = styled(BlogCard)`

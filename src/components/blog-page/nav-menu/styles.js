@@ -6,7 +6,7 @@ const NavWrapper = styled.div`
   overflow: auto;
   padding: 1rem 0.6rem;
   flex: 1;
-  border-top: 1px solid #ffffff5c;
+  border-top: 1px solid var(--light-white);
 `
 
 export { NavWrapper }
