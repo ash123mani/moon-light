@@ -8,7 +8,7 @@ import Container from './styles'
 const Comments = () => {
   useEffect(() => {
     window.gc_params = {
-      graphcomment_id: process.env.GRAPH_COMMENT_ID,
+      graphcomment_id: 'vnetmachina',
       fixed_header_height: 0,
     }
 
