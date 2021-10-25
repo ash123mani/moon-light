@@ -15,32 +15,32 @@ const options = {
     },
     [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
     [BLOCKS.HEADING_1]: (node, children) => (
-      <Heading as="h1" fs="3.2rem">
+      <Heading as="h1" fs="4.8rem" lh="2" mt="3" mb="1">
         {children}
       </Heading>
     ),
     [BLOCKS.HEADING_2]: (node, children) => (
-      <Heading as="h2" fs="2.8rem">
+      <Heading as="h2" fs="3.6rem" lh="1.5" mt="1" mb="1">
         {children}
       </Heading>
     ),
     [BLOCKS.HEADING_3]: (node, children) => (
-      <Heading as="h3" fs="2.4rem">
+      <Heading as="h3" fs="2.8rem" lh="2" mt="1" mb="0">
         {children}
       </Heading>
     ),
     [BLOCKS.HEADING_4]: (node, children) => (
-      <Heading as="h4" fs="2rem">
+      <Heading as="h4" fs="2.4rem" lh="1" mt="1" mb="0">
         {children}
       </Heading>
     ),
     [BLOCKS.HEADING_5]: (node, children) => (
-      <Heading as="h5" fs="1.8rem">
+      <Heading as="h5" fs="2rem" lh="1" mt="1" mb="0">
         {children}
       </Heading>
     ),
     [BLOCKS.HEADING_6]: (node, children) => (
-      <Heading as="h6" fs="1.8rem">
+      <Heading as="h6" fs="1.6rem" lh="1" mt="1" mb="0">
         {children}
       </Heading>
     ),

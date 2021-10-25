@@ -22,8 +22,8 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: 'Noto Sans JP', sans-serif;
-    line-height: 1.8;
+    font-family: 'Roboto';
+    line-height: 1.6;
   }
 
   a {
@@ -31,9 +31,11 @@ const GlobalStyles = createGlobalStyle`
     color: var(--dark-black);
   }
 
-  li {
-    list-style-type: none;
-  }
+  ul, ol {
+  padding-left: 0;
+  list-style-position: outside;
+}
+
 `
 
 export default GlobalStyles

@@ -54,30 +54,30 @@ const ContentContainer = styled.div`
 `
 
 const TitleContainer = styled.div`
-  height: 120px;
+  /* height: 120px; */
   /* max-width: 800px; */
   margin: 0 auto;
   display: flex;
   align-items: center;
   flex: 1;
-  border-bottom: 1px solid var(--border);
+  /* border-bottom: 1px solid var(--border); */
   /* position: relative; */
   ${animate}
   ${expand};
 `
 
 const Title = styled.h1`
-  font-size: 3.2rem;
+  font-size: 4.8rem;
+  line-height: 5.4rem;
   font-weight: 600;
   width: 100%;
-  text-align: center;
   color: var(--dark-black);
   height: inherit;
-  margin: 0 auto;
-  max-width: 800px;
+  margin: 4rem auto 2rem;
+  max-width: 600px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 `
 
 const StyledIcon = styled(Icon)`
@@ -96,8 +96,8 @@ const StyledIcon = styled(Icon)`
 `
 
 const Content = styled.div`
-  padding: 4rem 0rem;
-  max-width: 800px;
+  padding: 2rem 0rem;
+  max-width: 600px;
   margin: 0 auto;
   ${expand};
   ${animate};

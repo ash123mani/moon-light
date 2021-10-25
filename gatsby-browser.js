@@ -5,7 +5,7 @@ import Layout from './src/shared/layout'
 
 WebFont.load({
   google: {
-    families: ['Noto Sans JP:300,400,500,700', 'sans-serif'],
+    families: ['Roboto:300,400,500,600'],
   },
 })
 
