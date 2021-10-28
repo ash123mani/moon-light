@@ -1,3 +1,4 @@
 import { fadeInUp } from './animations'
+import { mediaQueries } from './responsive'
 
-export { fadeInUp }
+export { fadeInUp, mediaQueries }

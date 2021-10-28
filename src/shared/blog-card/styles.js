@@ -1,10 +1,16 @@
 import styled, { css } from 'styled-components'
 
+import { mediaQueries } from '../../styles/utils'
+
 const Content = styled.div`
   padding: 2rem 4rem;
   flex: 1;
   border-radius: 8px;
   transition: var(--card-transition);
+
+  @media ${mediaQueries['large-down']} {
+    padding: 1.8rem 2rem;
+  }
 `
 
 const orientationStyles = ({ orientation }) => {

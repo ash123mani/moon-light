@@ -23,7 +23,7 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: 'Roboto';
-    line-height: 1.6;
+    line-height: 1.4;
   }
 
   a {
@@ -35,7 +35,6 @@ const GlobalStyles = createGlobalStyle`
   padding-left: 0;
   list-style-position: outside;
 }
-
 `
 
 export default GlobalStyles

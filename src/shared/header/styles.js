@@ -1,4 +1,8 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+
+import Icon from '../../common/icon'
+
+import { mediaQueries, fadeInUp } from '../../styles/utils'
 
 const Wrapper = styled.header`
   position: sticky;
@@ -11,6 +15,40 @@ const Wrapper = styled.header`
   justify-content: space-between;
   background: var(--dark-white);
   z-index: 9999;
+
+  @media ${mediaQueries['large-down']} {
+    padding: 1.6rem 5%;
+    border-bottom: unset;
+  }
 `
 
-export { Wrapper }
+const StyledIcon = styled(Icon)`
+  /* height: 60px;
+  width: 60px; */
+`
+
+const HeaderContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+const LinksContainer = styled.div`
+  z-index: -11;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+
+  @media ${mediaQueries['large-down']} {
+    padding: 1rem 5%;
+    ${({ isMenuOpen }) => {
+      return (
+        isMenuOpen &&
+        css`
+          animation: ${fadeInUp} 0.5s linear;
+        `
+      )
+    }}
+  }
+`
+
+export { Wrapper, StyledIcon, HeaderContainer, LinksContainer }
