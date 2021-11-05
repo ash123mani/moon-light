@@ -1,7 +1,5 @@
 import styled, { css } from 'styled-components'
 
-import Icon from '../../common/icon'
-
 import { mediaQueries, fadeInUp } from '../../styles/utils'
 
 const Wrapper = styled.header`
@@ -21,19 +19,12 @@ const Wrapper = styled.header`
     border-bottom: unset;
   }
 `
-
-const StyledIcon = styled(Icon)`
-  /* height: 60px;
-  width: 60px; */
-`
-
 const HeaderContainer = styled.div`
   display: flex;
   flex-direction: column;
 `
 
 const LinksContainer = styled.div`
-  z-index: -11;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
@@ -51,4 +42,4 @@ const LinksContainer = styled.div`
   }
 `
 
-export { Wrapper, StyledIcon, HeaderContainer, LinksContainer }
+export { Wrapper, HeaderContainer, LinksContainer }

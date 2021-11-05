@@ -8,8 +8,9 @@ import { useMediaQuery } from 'react-responsive'
 import { mediaQueries } from '../../styles/utils/responsive'
 
 import Link from '../../common/link'
+import Icon from '../../common/icon'
 
-import { Wrapper, StyledIcon, HeaderContainer, LinksContainer } from './styles'
+import { Wrapper, HeaderContainer, LinksContainer } from './styles'
 
 function Header({ path }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -82,7 +83,7 @@ function Header({ path }) {
               loading="eager"
             />
           </Link>
-          <StyledIcon name={isMenuOpen ? 'close' : 'menu'} onClick={toggleMenu} />
+          <Icon name={isMenuOpen ? 'close' : 'menu'} onClick={toggleMenu} />
         </Wrapper>
         {isMenuOpen && links(isMenuOpen)}
       </HeaderContainer>

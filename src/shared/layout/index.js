@@ -20,7 +20,7 @@ function Layout(props) {
       <GlobalVariables />
       <ThemeProvider theme={theme}>
         {showHeader && <Header path={pathname} />}
-        <React.Fragment>{children}</React.Fragment>
+        <div>{children}</div>
         {showHeader && <Footer />}
       </ThemeProvider>
     </React.Fragment>
