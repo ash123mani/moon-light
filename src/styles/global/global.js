@@ -21,6 +21,11 @@ const Global = createGlobalStyle`
 
     --card-transition: transform 0.15s ease-out 0s, border-color 0.15s ease-out 0s, box-shadow 0.15s ease-out 0s;
   }
+
+  ::selection {
+    background: var(--dark-black);
+    color: var(--dark-white);
+  }
 `
 
 export default Global

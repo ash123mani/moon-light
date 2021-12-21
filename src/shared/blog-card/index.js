@@ -1,8 +1,5 @@
 import React from 'react'
 import { oneOf, string, object } from 'prop-types'
-import { useMediaQuery } from 'react-responsive'
-
-import { mediaQueries } from '../../styles/utils/responsive'
 
 import Link from '../../common/link'
 import Image from '../../common/image'
@@ -10,11 +7,10 @@ import Image from '../../common/image'
 import { BlogCard as Card, Content, BlogTitle, BlogDescription } from './styles'
 
 function BlogCard({ title, description, image, link, altText, orientation, cardStyles }) {
-  const isLargeUp = useMediaQuery({ query: mediaQueries['large-up'] })
   return (
     <Link to={link} className="blog-link">
       <Card orientation={orientation} style={cardStyles} className="card">
-        {image && isLargeUp && (
+        {image && (
           <Image
             alt={altText}
             image={image.gatsbyImageData}

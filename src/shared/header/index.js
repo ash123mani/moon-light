@@ -1,21 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { string } from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 // import Headroom from 'react-headroom'
-import { useMediaQuery } from 'react-responsive'
-
-import { mediaQueries } from '../../styles/utils/responsive'
 
 import Link from '../../common/link'
-import Icon from '../../common/icon'
 
-import { Wrapper, HeaderContainer, LinksContainer } from './styles'
+import { Wrapper, LinksContainer } from './styles'
 
 function Header({ path }) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const isMediumDown = useMediaQuery({ query: mediaQueries['medium-down'] })
-
   const data = useStaticQuery(graphql`
     query Header {
       contentfulHeaderAndFooter {
@@ -36,10 +29,6 @@ function Header({ path }) {
     },
   } = data
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
-
   const links = (isMenuOpen) => (
     <LinksContainer isMenuOpen={isMenuOpen}>
       {heading.map((data, index) => {
@@ -49,10 +38,10 @@ function Header({ path }) {
               to={data.link}
               asButton
               style={{
-                marginLeft: `${isMediumDown ? '0px' : '20px'}`,
+                marginLeft: `${'20px'}`,
                 fontWeight: 'bold',
-                marginRight: `${isMediumDown ? '20px' : '0px'}`,
-                marginBottom: `${isMediumDown ? '10px' : '0px'}`,
+                marginRight: `${'0px'}`,
+                marginBottom: `${'0px'}`,
               }}
             >
               {data.title}
@@ -67,28 +56,28 @@ function Header({ path }) {
     return null
   }
 
-  if (isMediumDown) {
-    return (
-      <HeaderContainer>
-        <Wrapper>
-          <Link to="/">
-            <StaticImage
-              placeholder="blurred"
-              layout="fixed"
-              src="../../images/vnet-logo-black.svg"
-              alt="Vnet Machina"
-              width={60}
-              height={60}
-              as="div"
-              loading="eager"
-            />
-          </Link>
-          <Icon name={isMenuOpen ? 'close' : 'menu'} onClick={toggleMenu} />
-        </Wrapper>
-        {isMenuOpen && links(isMenuOpen)}
-      </HeaderContainer>
-    )
-  }
+  // if (isMediumDown) {
+  //   return (
+  //     <HeaderContainer>
+  //       <Wrapper>
+  //         <Link to="/">
+  //           <StaticImage
+  //             placeholder="blurred"
+  //             layout="fixed"
+  //             src="../../images/vnet-logo-black.svg"
+  //             alt="Vnet Machina"
+  //             width={60}
+  //             height={60}
+  //             as="div"
+  //             loading="eager"
+  //           />
+  //         </Link>
+  //         <Icon name={isMenuOpen ? 'close' : 'menu'} onClick={toggleMenu} />
+  //       </Wrapper>
+  //       {isMenuOpen && links(isMenuOpen)}
+  //     </HeaderContainer>
+  //   )
+  // }
 
   return (
     <Wrapper>

@@ -1,15 +1,11 @@
 import React from 'react'
 import { array } from 'prop-types'
-import { useMediaQuery } from 'react-responsive'
 
 import BlogCard from '../../../shared/blog-card'
-import { mediaQueries } from '../../../styles/utils'
 
 import { Container, Title, Wrapper } from './styles'
 
 function MiscBlogs({ miscBlogs }) {
-  const isLargeDown = useMediaQuery({ query: mediaQueries['large-down'] })
-
   return (
     <Container>
       <Title>Hot Blogs</Title>
@@ -23,7 +19,7 @@ function MiscBlogs({ miscBlogs }) {
           }
 
           return (
-            <div style={{ marginBottom: `${isLargeDown ? '2rem' : '4rem'}` }} key={index}>
+            <div style={{ marginBottom: `4rem` }} key={index}>
               <BlogCard
                 title={title}
                 description={subtTitle}
