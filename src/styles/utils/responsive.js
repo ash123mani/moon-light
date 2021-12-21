@@ -1,8 +1,8 @@
 const breakpoints = {
-  small: 480,
-  medium: 768,
-  large: 1024,
-  xlarge: 1200,
+  sm: 0,
+  md: 768,
+  lg: 1024,
+  xl: 1192,
 }
 
 const mediaQueries = {

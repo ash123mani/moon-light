@@ -1,14 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { string } from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 // import Headroom from 'react-headroom'
 
-import Link from '../../common/link'
+import { MediaContextProvider, Media } from '../../styles/global'
 
-import { Wrapper, LinksContainer } from './styles'
+import Link from '../../common/link'
+import Icon from '../../common/icon'
+
+import { Wrapper, HeaderContainer, LinksContainer } from './styles'
 
 function Header({ path }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
   const data = useStaticQuery(graphql`
     query Header {
       contentfulHeaderAndFooter {
@@ -28,6 +33,10 @@ function Header({ path }) {
       headingLinks: { heading },
     },
   } = data
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
 
   const links = (isMenuOpen) => (
     <LinksContainer isMenuOpen={isMenuOpen}>
@@ -56,30 +65,28 @@ function Header({ path }) {
     return null
   }
 
-  // if (isMediumDown) {
-  //   return (
-  //     <HeaderContainer>
-  //       <Wrapper>
-  //         <Link to="/">
-  //           <StaticImage
-  //             placeholder="blurred"
-  //             layout="fixed"
-  //             src="../../images/vnet-logo-black.svg"
-  //             alt="Vnet Machina"
-  //             width={60}
-  //             height={60}
-  //             as="div"
-  //             loading="eager"
-  //           />
-  //         </Link>
-  //         <Icon name={isMenuOpen ? 'close' : 'menu'} onClick={toggleMenu} />
-  //       </Wrapper>
-  //       {isMenuOpen && links(isMenuOpen)}
-  //     </HeaderContainer>
-  //   )
-  // }
+  const mobileHeader = (
+    <HeaderContainer>
+      <Wrapper>
+        <Link to="/">
+          <StaticImage
+            placeholder="blurred"
+            layout="fixed"
+            src="../../images/vnet-logo-black.svg"
+            alt="Vnet Machina"
+            width={60}
+            height={60}
+            as="div"
+            loading="eager"
+          />
+        </Link>
+        <Icon name={isMenuOpen ? 'close' : 'menu'} onClick={toggleMenu} />
+      </Wrapper>
+      {isMenuOpen && links(isMenuOpen)}
+    </HeaderContainer>
+  )
 
-  return (
+  const desktopHeader = (
     <Wrapper>
       <Link to="/">
         <StaticImage
@@ -95,6 +102,13 @@ function Header({ path }) {
       </Link>
       {links()}
     </Wrapper>
+  )
+
+  return (
+    <MediaContextProvider>
+      <Media lessThan="lg">{mobileHeader}</Media>
+      <Media greaterThanOrEqual="lg">{desktopHeader}</Media>
+    </MediaContextProvider>
   )
 }
 

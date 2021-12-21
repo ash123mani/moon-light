@@ -16,6 +16,7 @@
     "refresh": "curl -X POST http://localhost:8000/__refresh"
   },
   "dependencies": {
+    "@artsy/fresnel": "^3.2.1",
     "@contentful/rich-text-types": "^14.1.2",
     "babel-plugin-styled-components": "^2.0.2",
     "gatsby": "^4.4.0",
@@ -38,7 +39,6 @@
     "react-headroom": "3.0.0",
     "react-helmet": "^6.1.0",
     "react-multi-carousel": "^2.6.3",
-    "react-responsive": "^9.0.0-beta.4",
     "styled-components": "^5.3.3",
     "webfontloader": "^1.6.28"
   },
