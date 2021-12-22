@@ -7,9 +7,8 @@ import { StaticImage } from 'gatsby-plugin-image'
 import { MediaContextProvider, Media } from '../../styles/global'
 
 import Link from '../../common/link'
-import Icon from '../../common/icon'
 
-import { Wrapper, HeaderContainer, LinksContainer } from './styles'
+import { Wrapper, LinksContainer, Explore, MobieHeaderContainer } from './styles'
 
 function Header({ path }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -42,20 +41,38 @@ function Header({ path }) {
     <LinksContainer isMenuOpen={isMenuOpen}>
       {heading.map((data, index) => {
         return (
-          <React.Fragment key={index}>
-            <Link
-              to={data.link}
-              asButton
-              style={{
-                marginLeft: `${'20px'}`,
-                fontWeight: 'bold',
-                marginRight: `${'0px'}`,
-                marginBottom: `${'0px'}`,
-              }}
-            >
-              {data.title}
-            </Link>
-          </React.Fragment>
+          <MediaContextProvider key={index}>
+            <Media lessThan="large">
+              <Link
+                to={data.link}
+                asButton
+                style={{
+                  marginLeft: `${'20px'}`,
+                  fontWeight: 'bold',
+                  marginRight: `${'4%'}`,
+                  marginBottom: `${'12px'}`,
+                  display: `inline-block`,
+                  float: 'right',
+                }}
+              >
+                {data.title}
+              </Link>
+            </Media>
+            <Media greaterThanOrEqual="large">
+              <Link
+                to={data.link}
+                asButton
+                style={{
+                  marginLeft: `${'20px'}`,
+                  fontWeight: 'bold',
+                  marginRight: `${'0px'}`,
+                  marginBottom: `${'0px'}`,
+                }}
+              >
+                {data.title}
+              </Link>
+            </Media>
+          </MediaContextProvider>
         )
       })}
     </LinksContainer>
@@ -66,7 +83,7 @@ function Header({ path }) {
   }
 
   const mobileHeader = (
-    <HeaderContainer>
+    <MobieHeaderContainer>
       <Wrapper>
         <Link to="/">
           <StaticImage
@@ -80,10 +97,12 @@ function Header({ path }) {
             loading="eager"
           />
         </Link>
-        <Icon name={isMenuOpen ? 'close' : 'menu'} onClick={toggleMenu} />
+        <Explore onClick={toggleMenu} isOpen={isMenuOpen}>
+          {isMenuOpen ? 'Close' : 'Explore Me'}
+        </Explore>
       </Wrapper>
       {isMenuOpen && links(isMenuOpen)}
-    </HeaderContainer>
+    </MobieHeaderContainer>
   )
 
   const desktopHeader = (
@@ -106,8 +125,8 @@ function Header({ path }) {
 
   return (
     <MediaContextProvider>
-      <Media lessThan="lg">{mobileHeader}</Media>
-      <Media greaterThanOrEqual="lg">{desktopHeader}</Media>
+      <Media lessThan="large">{mobileHeader}</Media>
+      <Media greaterThanOrEqual="large">{desktopHeader}</Media>
     </MediaContextProvider>
   )
 }

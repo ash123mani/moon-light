@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
-import { mediaQueries, fadeInUp } from '../../styles/utils'
+import { mediaQueries } from '../../styles/utils'
 
 const Wrapper = styled.header`
   position: sticky;
@@ -19,27 +19,36 @@ const Wrapper = styled.header`
     border-bottom: unset;
   }
 `
-const HeaderContainer = styled.div`
-  display: flex;
-  flex-direction: column;
 
-  @media ${mediaQueries['large-down']} {
-    padding: 1rem 5%;
-    ${({ isMenuOpen }) => {
-      return (
-        isMenuOpen &&
-        css`
-          animation: ${fadeInUp} 0.5s linear;
-        `
-      )
-    }}
-  }
+const MobieHeaderContainer = styled.div`
+  position: relative;
 `
 
 const LinksContainer = styled.div`
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
+  position: absolute;
+  z-index: 30000;
+  right: 0;
+  background: white;
+  height: 40vh;
+  width: 100%;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+
+  @media ${mediaQueries['large-down']} {
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+  }
 `
 
-export { Wrapper, HeaderContainer, LinksContainer }
+const Explore = styled.div`
+  font-size: 1.4rem;
+  border: 1px solid var(--dark-black);
+  padding: 2px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: normal;
+`
+
+export { Wrapper, LinksContainer, Explore, MobieHeaderContainer }

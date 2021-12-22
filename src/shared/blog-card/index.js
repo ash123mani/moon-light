@@ -3,6 +3,7 @@ import { oneOf, string, object } from 'prop-types'
 
 import Link from '../../common/link'
 import Image from '../../common/image'
+import { MediaContextProvider, Media } from '../../styles/global'
 
 import { BlogCard as Card, Content, BlogTitle, BlogDescription } from './styles'
 
@@ -11,15 +12,19 @@ function BlogCard({ title, description, image, link, altText, orientation, cardS
     <Link to={link} className="blog-link">
       <Card orientation={orientation} style={cardStyles} className="card">
         {image && (
-          <Image
-            alt={altText}
-            image={image.gatsbyImageData}
-            imgStyle={{
-              width: '350px',
-              height: '100%',
-              borderRadius: '8px',
-            }}
-          />
+          <MediaContextProvider>
+            <Media greaterThanOrEqual="medium">
+              <Image
+                alt={altText}
+                image={image.gatsbyImageData}
+                imgStyle={{
+                  width: '350px',
+                  height: '100%',
+                  borderRadius: '8px',
+                }}
+              />
+            </Media>
+          </MediaContextProvider>
         )}
 
         <Content className="content">

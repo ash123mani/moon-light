@@ -3,7 +3,7 @@ import { array } from 'prop-types'
 
 import BlogCard from '../../../shared/blog-card'
 
-import { Container, Title, Wrapper } from './styles'
+import { Container, Title, Wrapper, BlogCards } from './styles'
 
 function MiscBlogs({ miscBlogs }) {
   return (
@@ -19,7 +19,7 @@ function MiscBlogs({ miscBlogs }) {
           }
 
           return (
-            <div style={{ marginBottom: `4rem` }} key={index}>
+            <BlogCards key={index}>
               <BlogCard
                 title={title}
                 description={subtTitle}
@@ -27,7 +27,7 @@ function MiscBlogs({ miscBlogs }) {
                 link={blogUrl}
                 orientation={orientation}
               />
-            </div>
+            </BlogCards>
           )
         })}
       </Wrapper>
