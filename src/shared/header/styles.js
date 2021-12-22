@@ -24,7 +24,7 @@ const MobieHeaderContainer = styled.div`
   position: relative;
 `
 
-const LinksContainer = styled.div`
+const LinksContainerMobile = styled.div`
   padding: 0;
   position: absolute;
   z-index: 30000;
@@ -42,6 +42,11 @@ const LinksContainer = styled.div`
   }
 `
 
+const LinksContainerDesktop = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`
+
 const Explore = styled.div`
   font-size: 1.4rem;
   border: 1px solid var(--dark-black);
@@ -51,4 +56,4 @@ const Explore = styled.div`
   font-weight: normal;
 `
 
-export { Wrapper, LinksContainer, Explore, MobieHeaderContainer }
+export { Wrapper, Explore, MobieHeaderContainer, LinksContainerMobile, LinksContainerDesktop }

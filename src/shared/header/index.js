@@ -8,7 +8,7 @@ import { MediaContextProvider, Media } from '../../styles/global'
 
 import Link from '../../common/link'
 
-import { Wrapper, LinksContainer, Explore, MobieHeaderContainer } from './styles'
+import { Wrapper, LinksContainerDesktop, LinksContainerMobile, Explore, MobieHeaderContainer } from './styles'
 
 function Header({ path }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -37,8 +37,8 @@ function Header({ path }) {
     setIsMenuOpen(!isMenuOpen)
   }
 
-  const links = (isMenuOpen) => (
-    <LinksContainer isMenuOpen={isMenuOpen}>
+  const links = () => (
+    <>
       {heading.map((data, index) => {
         return (
           <MediaContextProvider key={index}>
@@ -75,7 +75,7 @@ function Header({ path }) {
           </MediaContextProvider>
         )
       })}
-    </LinksContainer>
+    </>
   )
 
   if (path !== '/') {
@@ -101,7 +101,7 @@ function Header({ path }) {
           {isMenuOpen ? 'Close' : 'Explore Me'}
         </Explore>
       </Wrapper>
-      {isMenuOpen && links(isMenuOpen)}
+      {isMenuOpen && <LinksContainerMobile>{links(isMenuOpen)}</LinksContainerMobile>}
     </MobieHeaderContainer>
   )
 
@@ -119,7 +119,7 @@ function Header({ path }) {
           loading="eager"
         />
       </Link>
-      {links()}
+      <LinksContainerDesktop>{links()}</LinksContainerDesktop>
     </Wrapper>
   )
 
