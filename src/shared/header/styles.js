@@ -47,13 +47,4 @@ const LinksContainerDesktop = styled.div`
   flex-wrap: wrap;
 `
 
-const Explore = styled.div`
-  font-size: 1.4rem;
-  border: 1px solid var(--dark-black);
-  padding: 2px 8px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: normal;
-`
-
-export { Wrapper, Explore, MobieHeaderContainer, LinksContainerMobile, LinksContainerDesktop }
+export { Wrapper, MobieHeaderContainer, LinksContainerMobile, LinksContainerDesktop }

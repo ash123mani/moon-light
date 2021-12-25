@@ -4,6 +4,8 @@ import BlogCard from '../../../shared/blog-card'
 import Icon from '../../../common/icon'
 import Footer from '../../../shared/footer'
 
+import { mediaQueries } from '../../../styles/utils'
+
 const expand = css`
   transition-property: padding;
   transition-duration: 0.5s;
@@ -25,7 +27,11 @@ const topSectionStyle = ({ isTopSection }) => {
     isTopSection &&
     css`
       max-width: unset;
-      padding: 4rem 10rem;
+      padding: 2rem 4%;
+
+      @media ${mediaQueries['large-up']} {
+        padding: 4rem 10rem;
+      }
     `
   )
 }
@@ -47,10 +53,14 @@ const RightContentContainer = styled.div`
 `
 
 const ContentContainer = styled.div`
-  width: 100%;
+  width: 100vw;
   min-height: 100vh;
   height: auto;
   position: relative;
+
+  @media ${mediaQueries['large-up']} {
+    width: 100%;
+  }
 `
 
 const TitleContainer = styled.div`
@@ -64,20 +74,30 @@ const TitleContainer = styled.div`
   /* position: relative; */
   ${animate}
   ${expand};
+  padding: 6%;
+
+  @media ${mediaQueries['large-up']} {
+    padding: 0;
+  }
 `
 
 const Title = styled.h1`
-  font-size: 4.8rem;
-  line-height: 5.4rem;
+  font-size: 2.4rem;
+  /* line-height: 5.4rem; */
   font-weight: 500;
   width: 100%;
   color: var(--dark-black);
   height: inherit;
-  margin: 4rem auto 2rem;
+  margin: 0rem auto;
   max-width: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media ${mediaQueries['large-up']} {
+    font-size: 4.8rem;
+    margin: 4rem auto 2rem;
+  }
 `
 
 const StyledIcon = styled(Icon)`
@@ -96,12 +116,16 @@ const StyledIcon = styled(Icon)`
 `
 
 const Content = styled.div`
-  padding: 2rem 0rem;
+  padding: 1.2rem 6%;
   max-width: 600px;
   margin: 0 auto;
   ${expand};
   ${animate};
   ${topSectionStyle};
+
+  @media ${mediaQueries['large-up']} {
+    padding: 2rem 0rem;
+  }
 `
 
 const StyledCard = styled(BlogCard)`

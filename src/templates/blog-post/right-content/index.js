@@ -51,7 +51,7 @@ function RightContent({ data, onCollapse, isCollapsed }) {
                   key={title}
                   image={image}
                   orientation={orientation}
-                  cardStyles={{ marginBottom: '4rem' }}
+                  cardStyles={{ marginBottom: '2rem' }}
                 />
               )
             })

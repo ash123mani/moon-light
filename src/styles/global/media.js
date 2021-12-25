@@ -2,9 +2,13 @@ import { createMedia } from '@artsy/fresnel'
 
 import { breakpoints } from '../utils'
 
-const { MediaContextProvider, Media } = createMedia({
+const AppMedia = createMedia({
   // breakpoints values can be either strings or integers
   breakpoints,
 })
 
-export { MediaContextProvider, Media }
+const { MediaContextProvider, Media } = AppMedia
+
+const mediaStyle = AppMedia.createMediaStyle()
+
+export { MediaContextProvider, Media, mediaStyle }

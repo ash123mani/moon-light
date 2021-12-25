@@ -7,8 +7,9 @@ import { StaticImage } from 'gatsby-plugin-image'
 import { MediaContextProvider, Media } from '../../styles/global'
 
 import Link from '../../common/link'
+import Icon from '../../common/icon'
 
-import { Wrapper, LinksContainerDesktop, LinksContainerMobile, Explore, MobieHeaderContainer } from './styles'
+import { Wrapper, LinksContainerDesktop, LinksContainerMobile, MobieHeaderContainer } from './styles'
 
 function Header({ path }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -97,9 +98,7 @@ function Header({ path }) {
             loading="eager"
           />
         </Link>
-        <Explore onClick={toggleMenu} isOpen={isMenuOpen}>
-          {isMenuOpen ? 'Close' : 'Explore Me'}
-        </Explore>
+        <Icon name={isMenuOpen ? 'close' : 'menu'} onClick={toggleMenu} height="32px" width="32px" />
       </Wrapper>
       {isMenuOpen && <LinksContainerMobile>{links(isMenuOpen)}</LinksContainerMobile>}
     </MobieHeaderContainer>
