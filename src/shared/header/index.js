@@ -1,19 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { string } from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
-import { StaticImage } from 'gatsby-plugin-image'
 // import Headroom from 'react-headroom'
 
 import { MediaContextProvider, Media } from '../../styles/global'
 
-import Link from '../../common/link'
-import Icon from '../../common/icon'
-
-import { Wrapper, LinksContainerDesktop, LinksContainerMobile, MobieHeaderContainer } from './styles'
+import DesktopHeader from './desktop'
+import MobileHeader from './mobile'
 
 function Header({ path }) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-
   const data = useStaticQuery(graphql`
     query Header {
       contentfulHeaderAndFooter {
@@ -34,98 +29,18 @@ function Header({ path }) {
     },
   } = data
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
-
-  const links = () => (
-    <>
-      {heading.map((data, index) => {
-        return (
-          <MediaContextProvider key={index}>
-            <Media lessThan="large">
-              <Link
-                to={data.link}
-                asButton
-                style={{
-                  marginLeft: `${'20px'}`,
-                  fontWeight: 'bold',
-                  marginRight: `${'4%'}`,
-                  marginBottom: `${'12px'}`,
-                  display: `inline-block`,
-                  float: 'right',
-                }}
-              >
-                {data.title}
-              </Link>
-            </Media>
-            <Media greaterThanOrEqual="large">
-              <Link
-                to={data.link}
-                asButton
-                style={{
-                  marginLeft: `${'20px'}`,
-                  fontWeight: 'bold',
-                  marginRight: `${'0px'}`,
-                  marginBottom: `${'0px'}`,
-                }}
-              >
-                {data.title}
-              </Link>
-            </Media>
-          </MediaContextProvider>
-        )
-      })}
-    </>
-  )
-
   if (path !== '/') {
     return null
   }
 
-  const mobileHeader = (
-    <MobieHeaderContainer>
-      <Wrapper>
-        <Link to="/">
-          <StaticImage
-            placeholder="blurred"
-            layout="fixed"
-            src="../../images/vnet-logo-black.svg"
-            alt="Vnet Machina"
-            width={60}
-            height={60}
-            as="div"
-            loading="eager"
-          />
-        </Link>
-        <Icon name={isMenuOpen ? 'close' : 'menu'} onClick={toggleMenu} height="32px" width="32px" />
-      </Wrapper>
-      {isMenuOpen && <LinksContainerMobile>{links(isMenuOpen)}</LinksContainerMobile>}
-    </MobieHeaderContainer>
-  )
-
-  const desktopHeader = (
-    <Wrapper>
-      <Link to="/">
-        <StaticImage
-          placeholder="blurred"
-          layout="fixed"
-          src="../../images/vnet-logo-black.svg"
-          alt="Vnet Machina"
-          width={80}
-          height={80}
-          as="div"
-          loading="eager"
-        />
-      </Link>
-      <LinksContainerDesktop>{links()}</LinksContainerDesktop>
-    </Wrapper>
-  )
-
   return (
     <MediaContextProvider>
-      <Media lessThan="large">{mobileHeader}</Media>
-      <Media greaterThanOrEqual="large">{desktopHeader}</Media>
+      <Media lessThan="large">
+        <MobileHeader heading={heading} />
+      </Media>
+      <Media greaterThanOrEqual="large">
+        <DesktopHeader heading={heading} />
+      </Media>
     </MediaContextProvider>
   )
 }
