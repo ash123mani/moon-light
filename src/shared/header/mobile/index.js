@@ -42,7 +42,7 @@ const MobileHeader = ({ heading }) => {
         {isMenuOpen ? <LogoWhite /> : <LogoBlack />}
         <Icon name={isMenuOpen ? 'close' : 'menu'} onClick={toggleMenu} height="24px" width="24px" />
       </Wrapper>
-      {isMenuOpen && <LinksContainerMobile isMenuOpen={isMenuOpen}>{links(isMenuOpen)}</LinksContainerMobile>}
+      <LinksContainerMobile isMenuOpen={isMenuOpen}>{links(isMenuOpen)}</LinksContainerMobile>
     </MobieHeaderContainer>
   )
 }

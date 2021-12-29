@@ -3,17 +3,28 @@ import styled from 'styled-components'
 import Divider from '../../common/divider'
 import Link from '../../common/link'
 
-const Container = styled.div`
-  padding: 8rem 10%;
+import { mediaQueries } from '../../styles/utils'
+
+const Container = styled.section`
+  padding: 3.2rem 4%;
   background: var(--dark-black);
+
+  @media ${mediaQueries['large-up']} {
+    padding: 8rem 10%;
+  }
 `
 
 const TopContent = styled.div``
 
 const Title = styled.div`
-  font-size: 2rem;
+  font-size: 1.6rem;
   color: var(--medium-white);
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.8rem;
+
+  @media ${mediaQueries['large-up']} {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+  }
 `
 
 const About = styled.div`
@@ -22,12 +33,21 @@ const About = styled.div`
 `
 
 const StyledDivider = styled(Divider)`
-  margin: 4rem 0rem;
+  margin: 2.8rem 0rem;
+
+  @media ${mediaQueries['large-up']} {
+    margin: 4rem 0rem;
+  }
 `
 
 const BottomContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+
+  @media ${mediaQueries['large-up']} {
+    flex-direction: row;
+  }
 `
 
 const BottomTitle = styled.div`
@@ -39,16 +59,28 @@ const BottomTitle = styled.div`
 const AllLinks = styled.div`
   display: flex;
   flex-direction: column;
+  margin: 2rem 0;
+
+  @media ${mediaQueries['large-up']} {
+    margin: 0;
+  }
 `
 
 const StyledLink = styled(Link)`
   color: var(--medium-white);
-  margin-top: 1.8rem;
+  margin-top: 0.8rem;
   display: flex;
   align-items: center;
+  border-bottom: 1px solid var(--light-white);
+  padding: 0.8rem 0;
 
   &:hover {
     text-decoration: underline;
+  }
+
+  @media ${mediaQueries['large-up']} {
+    border-bottom: unset;
+    margin-top: 1.8rem;
   }
 `
 

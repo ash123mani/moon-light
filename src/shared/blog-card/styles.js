@@ -3,9 +3,9 @@ import styled, { css } from 'styled-components'
 import { mediaQueries } from '../../styles/utils'
 
 const Content = styled.div`
-  padding: 2rem;
+  padding: 0.8rem 1.2rem;
   flex: 1;
-  border-radius: 8px;
+  border-radius: 4px;
   transition: var(--card-transition);
 
   @media ${mediaQueries['medium-up']} {
@@ -71,7 +71,7 @@ const BlogCard = styled.div`
 `
 
 const BlogTitle = styled.div`
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 400;
   color: var(--dark-black);
 
@@ -81,12 +81,13 @@ const BlogTitle = styled.div`
 `
 
 const BlogDescription = styled.div`
-  font-size: 1.6rem;
-  margin-top: 1.2rem;
+  font-size: 1.4rem;
+  margin-top: 0.4rem;
   color: var(--medium-black);
 
   @media ${mediaQueries['large-up']} {
     font-size: 1.6rem;
+    margin-top: 1.2rem;
   }
 `
 

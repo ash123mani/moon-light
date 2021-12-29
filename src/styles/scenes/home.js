@@ -8,7 +8,7 @@ const Container = styled.div`
   height: calc(100vh - 113px);
 
   @media ${mediaQueries['large-down']} {
-    height: 50vh;
+    height: 70vh;
   }
 `
 

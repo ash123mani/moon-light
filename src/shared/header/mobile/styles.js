@@ -38,7 +38,19 @@ const LinksContainerMobile = styled.div`
   display: flex;
   flex-wrap: wrap;
   background: var(--dark-black);
-  height: calc(100vh - 76px);
+  height: 0;
+  top: -100%;
+  transition: all 0.4s;
+
+  ${({ isMenuOpen }) => {
+    return (
+      isMenuOpen &&
+      css`
+        height: calc(100vh - 76px);
+        top: 100%;
+      `
+    )
+  }};
 `
 
 export { Wrapper, MobieHeaderContainer, LinksContainerMobile }

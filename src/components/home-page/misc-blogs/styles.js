@@ -11,7 +11,7 @@ const Container = styled.div`
 `
 
 const Title = styled.h3`
-  font-size: 2.8rem;
+  font-size: 2.4rem;
 
   @media ${mediaQueries['medium-up']} {
     font-size: 4.2rem;

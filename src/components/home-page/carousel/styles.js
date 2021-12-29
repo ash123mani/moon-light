@@ -12,6 +12,10 @@ const TextWrapper = styled.div`
   top: 44%;
   padding-left: 10%;
   max-width: 80%;
+
+  @media ${mediaQueries['large-down']} {
+    top: 20%;
+  }
 `
 const Title = styled.h1`
   color: var(--dark-white);
