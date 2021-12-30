@@ -8,6 +8,7 @@ import twitter from '../../images/twitter.svg'
 import linkedin from '../../images/linkedin.svg'
 import facebook from '../../images/facebook.svg'
 import mail from '../../images/mail.svg'
+import { MediaContextProvider, Media } from '../../styles/global'
 
 import {
   Container,
@@ -124,14 +125,28 @@ function Footer(props) {
             loading="eager"
           />
         </Link>
-        <AllLinks>
-          <BottomTitle>{pageLinksTitle}</BottomTitle>
-          {renderPageLinksSection()}
-        </AllLinks>
-        <AllLinks>
-          <BottomTitle>{contactsTitle}</BottomTitle>
-          {renderContactLinksSection()}
-        </AllLinks>
+        <MediaContextProvider>
+          <Media lessThan="large">
+            <AllLinks>
+              <BottomTitle>{pageLinksTitle}</BottomTitle>
+              {renderPageLinksSection()}
+            </AllLinks>
+            <AllLinks>
+              <BottomTitle>{contactsTitle}</BottomTitle>
+              {renderContactLinksSection()}
+            </AllLinks>
+          </Media>
+          <Media greaterThanOrEqual="large">
+            <AllLinks>
+              <BottomTitle>{pageLinksTitle}</BottomTitle>
+              {renderPageLinksSection()}
+            </AllLinks>
+            <AllLinks>
+              <BottomTitle>{contactsTitle}</BottomTitle>
+              {renderContactLinksSection()}
+            </AllLinks>
+          </Media>
+        </MediaContextProvider>
       </BottomContainer>
     </Container>
   )

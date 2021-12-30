@@ -64,20 +64,16 @@ const ContentContainer = styled.div`
 `
 
 const TitleContainer = styled.div`
-  /* height: 120px; */
-  /* max-width: 800px; */
   margin: 0 auto;
-  display: flex;
-  align-items: center;
   flex: 1;
-  /* border-bottom: 1px solid var(--border); */
-  /* position: relative; */
   ${animate}
   ${expand};
-  padding: 6%;
+  padding: 4%;
 
   @media ${mediaQueries['large-up']} {
     padding: 0;
+    display: flex;
+    align-items: center;
   }
 `
 

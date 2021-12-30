@@ -4,7 +4,9 @@ import { StaticImage } from 'gatsby-plugin-image'
 
 import Link from '../../../../common/link'
 
-import { NonIndexPageHeader, StyledIcon } from './styles'
+import { MediaContextProvider, Media } from '../../../../styles/global'
+
+import { NonIndexPageHeader, StyledIcon, Wrapper, StyledCloseIcon } from './styles'
 
 function BlogPageHeader({ onShrinkClick, isCollapsed }) {
   const handleExpand = () => {
@@ -13,19 +15,40 @@ function BlogPageHeader({ onShrinkClick, isCollapsed }) {
 
   return (
     <NonIndexPageHeader>
-      <Link to="/">
-        <StaticImage
-          placeholder="blurred"
-          layout="fixed"
-          src="../../images/vnet-logo-white.svg"
-          alt="Vnet Machina"
-          width={80}
-          height={80}
-          as="div"
-          loading="eager"
-        />
-      </Link>
-      {!isCollapsed && <StyledIcon name="expand" onClick={handleExpand} />}
+      <MediaContextProvider>
+        <Media lessThan="large">
+          <Wrapper>
+            <StyledCloseIcon name="close" onClick={handleExpand} />
+            <Link to="/">
+              <StaticImage
+                placeholder="blurred"
+                layout="fixed"
+                src="../../../../images/vnet-logo-white.svg"
+                alt="Vnet Machina"
+                width={40}
+                height={40}
+                as="div"
+                loading="eager"
+              />
+            </Link>
+          </Wrapper>
+        </Media>
+        <Media greaterThanOrEqual="large">
+          <Link to="/">
+            <StaticImage
+              placeholder="blurred"
+              layout="fixed"
+              src="../../../../images/vnet-logo-white.svg"
+              alt="Vnet Machina"
+              width={80}
+              height={80}
+              as="div"
+              loading="eager"
+            />
+          </Link>
+        </Media>
+        <Media greaterThanOrEqual="large">{!isCollapsed && <StyledIcon name="expand" onClick={handleExpand} />}</Media>
+      </MediaContextProvider>
     </NonIndexPageHeader>
   )
 }

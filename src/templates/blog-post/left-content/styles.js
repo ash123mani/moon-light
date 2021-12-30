@@ -19,7 +19,7 @@ const NavContainer = styled.aside`
   overflow: auto;
   display: flex;
   flex-direction: column;
-  width: 320px;
+  width: 80%;
   background-color: var(--dark-black);
   transition-property: width;
   transition-duration: 0.5s;
@@ -28,6 +28,7 @@ const NavContainer = styled.aside`
 
   @media ${mediaQueries['large-up']} {
     position: sticky;
+    width: 320px;
   }
 `
 

@@ -44,9 +44,11 @@ const BottomContainer = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  align-items: center;
 
   @media ${mediaQueries['large-up']} {
     flex-direction: row;
+    align-items: unset;
   }
 `
 
@@ -60,18 +62,19 @@ const AllLinks = styled.div`
   display: flex;
   flex-direction: column;
   margin: 2rem 0;
+  align-items: center;
 
   @media ${mediaQueries['large-up']} {
     margin: 0;
+    align-items: unset;
   }
 `
 
 const StyledLink = styled(Link)`
   color: var(--medium-white);
-  margin-top: 0.8rem;
+  margin-top: 0.4rem;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--light-white);
   padding: 0.8rem 0;
 
   &:hover {

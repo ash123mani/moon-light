@@ -4,6 +4,9 @@ import { shape, array, func, bool } from 'prop-types'
 import RichTextToDOM from '../../../shared/rich-text-to-dom'
 import Comments from '../../../components/comments'
 
+import { MediaContextProvider, Media } from '../../../styles/global'
+import MobileHeader from './mobile-header'
+
 import {
   ContentContainer,
   Content,
@@ -22,7 +25,7 @@ function RightContent({ data, onCollapse, isCollapsed }) {
   } = data
   const isTopSection = !!nodes.length
 
-  const handleExpand = () => {
+  const handleCollapse = () => {
     onCollapse(!isCollapsed)
   }
 
@@ -30,8 +33,18 @@ function RightContent({ data, onCollapse, isCollapsed }) {
     <RightContentContainer>
       <ContentContainer>
         <TitleContainer isCollapsed={isCollapsed}>
-          <Title>{title}</Title>
-          <StyledIcon name="shrink" onClick={handleExpand} isCollapsed={isCollapsed} />
+          <MediaContextProvider>
+            <Media lessThan="large">
+              <MobileHeader onMenuExpand={handleCollapse} />
+              <Title>{title}</Title>
+            </Media>
+            <Media greaterThanOrEqual="large">
+              <Title>{title}</Title>
+            </Media>
+            <Media greaterThanOrEqual="large">
+              <StyledIcon name="shrink" onClick={handleCollapse} isCollapsed={isCollapsed} />
+            </Media>
+          </MediaContextProvider>
         </TitleContainer>
         <Content isCollapsed={isCollapsed} isTopSection={isTopSection}>
           {isTopSection ? (
