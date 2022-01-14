@@ -75,7 +75,7 @@ const TitleContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 4%;
+    padding: 0%;
   }
 `
 
@@ -94,7 +94,7 @@ const Title = styled.h1`
   /* text-align: center; */
 
   @media ${mediaQueries['large-up']} {
-    font-size: 3.2rem;
+    font-size: 4rem;
     margin: 4rem auto 2rem;
   }
 `
@@ -124,7 +124,7 @@ const Content = styled.div`
 
   @media ${mediaQueries['large-up']} {
     padding: 2rem 6rem;
-    max-width: 740px;
+    max-width: ${({ isTopSection }) => (isTopSection ? '80%' : '740px')};
   }
 `
 

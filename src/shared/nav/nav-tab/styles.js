@@ -17,8 +17,8 @@ const NavBox = styled.div`
   align-items: center;
   padding: 4px 12px;
   border-radius: 4px;
-  max-width: 240px;
-  min-width: 240px;
+  /* max-width: 240px;
+  min-width: 240px; */
   width: auto;
   margin: 8px;
   cursor: pointer;

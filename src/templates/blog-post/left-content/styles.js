@@ -24,7 +24,7 @@ const NavContainer = styled.aside`
   transition-property: width;
   transition-duration: 0.5s;
   transition-timing-function: ease-in;
-  width: 80%;
+  width: 100%;
   ${expand};
 
   @media ${mediaQueries['large-up']} {

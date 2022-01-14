@@ -15,12 +15,12 @@ const options = {
     },
     [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
     [BLOCKS.HEADING_1]: (node, children) => (
-      <Heading as="h1" fs="4.8rem" lh="2" mt="3" mb="1">
+      <Heading as="h1" fs="4.2rem" lh="2" mt="3" mb="1">
         {children}
       </Heading>
     ),
     [BLOCKS.HEADING_2]: (node, children) => (
-      <Heading as="h2" fs="3.6rem" lh="1.5" mt="1" mb="1">
+      <Heading as="h2" fs="3.2rem" lh="1.5" mt="1" mb="1">
         {children}
       </Heading>
     ),
