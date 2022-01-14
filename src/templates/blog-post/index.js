@@ -3,28 +3,44 @@ import { shape, array } from 'prop-types'
 import { graphql } from 'gatsby'
 
 import SEO from '../../common/seo'
+import { MediaContextProvider, Media } from '../../styles/global'
 
 import RightContent from './right-content'
 import LeftContent from './left-content'
 
-import { Container } from './styles'
+import { Container, StyledMedia } from './styles'
 
 function BlogPost({ data }) {
-  const [isCollapsed, setIsCollapsed] = useState(false)
+  const [isCollapsedDesktop, setIsCollapsedDesktop] = useState(false)
+  const [isCollapsedMobile, setIsCollapsedMobile] = useState(true)
   const {
     contentfulBlogPages: { title },
   } = data
 
   const handleCollapse = (flag) => {
-    setIsCollapsed(flag)
+    setIsCollapsedDesktop(flag)
+    setIsCollapsedMobile(flag)
   }
 
   return (
     <React.Fragment>
       <SEO title={title} />
       <Container>
-        <LeftContent title={title} onCollapse={handleCollapse} isCollapsed={isCollapsed} />
-        <RightContent data={data} isCollapsed={isCollapsed} onCollapse={handleCollapse} />
+        <MediaContextProvider>
+          <Media lessThan="large">
+            <LeftContent title={title} onCollapse={handleCollapse} isCollapsed={isCollapsedMobile} />
+          </Media>
+          <Media lessThan="large">
+            <RightContent data={data} isCollapsed={isCollapsedMobile} onCollapse={handleCollapse} />
+          </Media>
+
+          <Media greaterThanOrEqual="large">
+            <LeftContent title={title} onCollapse={handleCollapse} isCollapsed={isCollapsedDesktop} />
+          </Media>
+          <StyledMedia greaterThanOrEqual="large" style={{ width: '100%' }}>
+            <RightContent data={data} isCollapsed={isCollapsedDesktop} onCollapse={handleCollapse} />
+          </StyledMedia>
+        </MediaContextProvider>
       </Container>
     </React.Fragment>
   )

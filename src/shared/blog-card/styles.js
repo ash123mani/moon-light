@@ -52,6 +52,7 @@ const orientationStyles = ({ orientation }) => {
 const BlogCard = styled.div`
   width: 100%;
   display: flex;
+  min-height: 140px;
 
   ${orientationStyles}
 
@@ -67,6 +68,10 @@ const BlogCard = styled.div`
     ${Content} {
       box-shadow: var(--box-shadow-1);
     }
+  }
+
+  @media ${mediaQueries['large-up']} {
+    min-height: 240px;
   }
 `
 

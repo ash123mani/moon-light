@@ -12,9 +12,11 @@ const NonIndexPageHeader = styled.div`
   height: 80px;
   align-items: center;
   position: relative;
+  flex-direction: row;
 
   @media ${mediaQueries['large-up']} {
     height: 120px;
+    flex-direction: column;
   }
 
   & .fresnel-lessThan-large {

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import Carousel from 'react-multi-carousel'
 
-import { fadeInUp, mediaQueries, trimText } from '../../../styles/utils'
+import { fadeInUp, mediaQueries } from '../../../styles/utils'
 
 const ContentWrapper = styled.div`
   height: 100%;
@@ -31,7 +31,6 @@ const Description = styled.h2`
   font-weight: 400;
   color: var(--dark-white);
   margin-top: 1rem;
-  ${trimText};
 
   @media ${mediaQueries['large-down']} {
     font-size: 2rem;

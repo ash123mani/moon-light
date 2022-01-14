@@ -74,6 +74,7 @@ const TitleContainer = styled.div`
     padding: 0;
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 `
 
@@ -84,14 +85,15 @@ const Title = styled.h1`
   width: 100%;
   color: var(--dark-black);
   height: inherit;
-  margin: 0rem auto;
+  margin: 4rem auto 0 0;
   max-width: 600px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center;
+  justify-content: center; */
+  /* text-align: center; */
 
   @media ${mediaQueries['large-up']} {
-    font-size: 4.8rem;
+    font-size: 3.2rem;
     margin: 4rem auto 2rem;
   }
 `
@@ -113,14 +115,14 @@ const StyledIcon = styled(Icon)`
 
 const Content = styled.div`
   padding: 1.2rem 6%;
-  max-width: 600px;
+  max-width: 740px;
   margin: 0 auto;
   ${expand};
   ${animate};
   ${topSectionStyle};
 
   @media ${mediaQueries['large-up']} {
-    padding: 2rem 0rem;
+    padding: 2rem 6rem;
   }
 `
 

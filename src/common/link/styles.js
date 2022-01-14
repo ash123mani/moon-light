@@ -1,6 +1,8 @@
 import styled, { css } from 'styled-components'
 import { Link } from 'gatsby'
 
+import { mediaQueries } from '../../styles/utils'
+
 const asButtonStyles = ({ asButton }) =>
   asButton &&
   css`
@@ -32,21 +34,36 @@ const asButtonStyles = ({ asButton }) =>
 
     &:hover {
       opacity: 1;
-      color: var(--dark-black);
+      color: white;
     }
 
     &:hover:before,
     &:hover:after {
       width: 0%;
-      background: var(--dark-white);
-      -webkit-transition: all 500ms linear;
-      -ms-transition: all 500ms linear;
-      transition: all 500ms linear;
+      background: unset;
+      transition: unset;
+    }
+
+    @media ${mediaQueries['large-up']} {
+      &:hover {
+        opacity: 1;
+        color: var(--medium-white);
+      }
+
+      &:hover:before,
+      &:hover:after {
+        width: 0%;
+        background: var(--dark-white);
+        -webkit-transition: all 500ms linear;
+        -ms-transition: all 500ms linear;
+        transition: all 500ms linear;
+      }
     }
   `
 
 const GatsbyLink = styled(Link)`
   font-size: 1.4rem;
+  height: fit-content;
 
   &:hover {
     /* opacity: 0.6; */

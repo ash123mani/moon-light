@@ -131,6 +131,8 @@ function Footer(props) {
               <BottomTitle>{pageLinksTitle}</BottomTitle>
               {renderPageLinksSection()}
             </AllLinks>
+          </Media>
+          <Media lessThan="large">
             <AllLinks>
               <BottomTitle>{contactsTitle}</BottomTitle>
               {renderContactLinksSection()}
@@ -141,6 +143,9 @@ function Footer(props) {
               <BottomTitle>{pageLinksTitle}</BottomTitle>
               {renderPageLinksSection()}
             </AllLinks>
+          </Media>
+
+          <Media greaterThanOrEqual="large">
             <AllLinks>
               <BottomTitle>{contactsTitle}</BottomTitle>
               {renderContactLinksSection()}

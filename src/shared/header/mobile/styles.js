@@ -12,6 +12,7 @@ const Wrapper = styled.header`
   justify-content: space-between;
   background: var(--dark-white);
   z-index: 9999;
+  position: fixed;
 
   ${({ isMenuOpen }) => {
     return (
@@ -29,7 +30,7 @@ const MobieHeaderContainer = styled.div`
 
 const LinksContainerMobile = styled.div`
   padding: 0;
-  position: absolute;
+  position: fixed;
   z-index: 30000;
   right: 0;
   background: white;
@@ -47,7 +48,7 @@ const LinksContainerMobile = styled.div`
       isMenuOpen &&
       css`
         height: calc(100vh - 76px);
-        top: 100%;
+        top: 73px;
       `
     )
   }};

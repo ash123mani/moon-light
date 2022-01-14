@@ -40,8 +40,6 @@ function RightContent({ data, onCollapse, isCollapsed }) {
             </Media>
             <Media greaterThanOrEqual="large">
               <Title>{title}</Title>
-            </Media>
-            <Media greaterThanOrEqual="large">
               <StyledIcon name="shrink" onClick={handleCollapse} isCollapsed={isCollapsed} />
             </Media>
           </MediaContextProvider>
