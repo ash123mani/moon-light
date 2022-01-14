@@ -28,16 +28,16 @@ function BlogPost({ data }) {
       <Container>
         <MediaContextProvider>
           <Media lessThan="large">
-            <LeftContent title={title} onCollapse={handleCollapse} isCollapsed={isCollapsedMobile} />
+            <LeftContent title={title} isCollapsed={isCollapsedMobile} onCollapse={handleCollapse} />
           </Media>
           <Media lessThan="large">
             <RightContent data={data} isCollapsed={isCollapsedMobile} onCollapse={handleCollapse} />
           </Media>
 
           <Media greaterThanOrEqual="large">
-            <LeftContent title={title} onCollapse={handleCollapse} isCollapsed={isCollapsedDesktop} />
+            <LeftContent title={title} isCollapsed={isCollapsedDesktop} onCollapse={handleCollapse} />
           </Media>
-          <StyledMedia greaterThanOrEqual="large" style={{ width: '100%' }}>
+          <StyledMedia greaterThanOrEqual="large">
             <RightContent data={data} isCollapsed={isCollapsedDesktop} onCollapse={handleCollapse} />
           </StyledMedia>
         </MediaContextProvider>

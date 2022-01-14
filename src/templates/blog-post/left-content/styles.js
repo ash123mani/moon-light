@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components'
 import { mediaQueries } from '../../../styles/utils'
 
 const expand = ({ isCollapsed }) => {
+  console.log('isCollapsed', isCollapsed)
   return (
     isCollapsed &&
     css`
@@ -19,16 +20,17 @@ const NavContainer = styled.aside`
   overflow: auto;
   display: flex;
   flex-direction: column;
-  width: 80%;
   background-color: var(--dark-black);
   transition-property: width;
   transition-duration: 0.5s;
   transition-timing-function: ease-in;
+  width: 80%;
   ${expand};
 
   @media ${mediaQueries['large-up']} {
     position: sticky;
     width: 320px;
+    ${expand};
   }
 `
 

@@ -68,13 +68,14 @@ const TitleContainer = styled.div`
   flex: 1;
   ${animate}
   ${expand};
-  padding: 4%;
+  padding: 4% 6%;
 
   @media ${mediaQueries['large-up']} {
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 4%;
   }
 `
 
@@ -115,7 +116,7 @@ const StyledIcon = styled(Icon)`
 
 const Content = styled.div`
   padding: 1.2rem 6%;
-  max-width: 740px;
+  max-width: 100%;
   margin: 0 auto;
   ${expand};
   ${animate};
@@ -123,6 +124,7 @@ const Content = styled.div`
 
   @media ${mediaQueries['large-up']} {
     padding: 2rem 6rem;
+    max-width: 740px;
   }
 `
 
@@ -137,9 +139,13 @@ const StyledCard = styled(BlogCard)`
 `
 
 const StyledFooter = styled(Footer)`
-  padding: 4rem 8rem;
+  padding: 4rem 6%;
   ${expand};
   ${animate};
+
+  @media ${mediaQueries['large-up']} {
+    padding: 4rem 8rem;
+  }
 `
 
 export { TitleContainer, Title, StyledIcon, ContentContainer, Content, RightContentContainer, StyledCard, StyledFooter }
